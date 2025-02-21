@@ -408,8 +408,8 @@ footer {
     border-top: 3px solid #222840;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;    
-    padding-bottom: 80px; 
+    padding-top: 60px;    
+    padding-bottom: 60px; 
 }
 
 footer::before {
