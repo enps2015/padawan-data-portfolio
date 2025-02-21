@@ -133,4 +133,25 @@
     #sobre-mim ul.lista-habilidades li .nivel-habilidade {
         justify-content: center; /* Centraliza os círculos de nível */
     }
+
+        .contato-item p {
+        font-size: 1.0em;
+    }
+    
+    yoda-quote p {
+        font-size: 1.0em;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #0B0B17;
+        color: #FFFFFF;
+        padding: 100px 0;
+        text-align: center;
+        border-top: 3px solid #222840;
+        position: relative;
+        overflow: hidden;
+        padding-top: 20px;    
+        padding-bottom: 20px;
+    }
 }
