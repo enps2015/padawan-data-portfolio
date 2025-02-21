@@ -172,17 +172,13 @@ nav a:hover {
 
 .foto-circular-container {
     position: relative;
-    width: 450px; /* Ajuste se necessário */
-    height: auto; /* Importante para manter a proporção */
-    border-radius: 10px;  /* FOTO RETANGULAR */
+    width: 450px; 
+    height: auto; 
+    border-radius: 10px;  /
     overflow: hidden;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto; /
     display: block;
-}
-/* REMOVIDO O FUNDO CIRCULAR */
-.foto-circular-container::before {
-   content: none;
 }
 
 #sobre-mim h2 {
@@ -221,13 +217,13 @@ nav a:hover {
 #sobre-mim ul.lista-habilidades {
     list-style: none;
     padding: 0;
-    margin-top: 30px; /* Aumentei um pouco a margem */
-    max-width: 800px; /* Aumentei a largura máxima */
+    margin-top: 30px; 
+    max-width: 800px; 
     margin-left: auto;
     margin-right: auto;
-    display: grid; /* Usando Grid para layout */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
-    gap: 30px; /* Espaçamento entre as habilidades */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
   }
 
   /* Estilo de cada item da lista (habilidade) */
@@ -237,29 +233,29 @@ nav a:hover {
     border-radius: 10px;
     display: flex;
     align-items: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Sombra mais suave */
-    transition: transform 0.2s ease; /* Transição suave */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.2s ease; 
   }
 
   /* Efeito hover nos itens da lista */
     #sobre-mim ul.lista-habilidades li:hover {
-        transform: translateY(-5px); /* Leve elevação */
+        transform: translateY(-5px); 
     }
 
   /* Container do ícone */
   #sobre-mim ul.lista-habilidades li .icone-habilidade {
     margin-right: 20px;
-    font-size: 2em; /* Ajuste o tamanho do ícone */
-    color: #E87E04; /* Cor do ícone */
-    width: 40px; /* Largura fixa para o ícone (ajuste se necessário) */
-    text-align: center; /* Centraliza o ícone horizontalmente */
+    font-size: 2em; 
+    color: #E87E04; 
+    width: 40px; 
+    text-align: center; 
   }
 
   /* Nome da habilidade */
   #sobre-mim ul.lista-habilidades li .nome-habilidade {
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    flex-grow: 1; /* Ocupa o espaço restante */
+    flex-grow: 1; 
     font-size: 1.1em;
   }
 
@@ -281,7 +277,7 @@ nav a:hover {
 #sobre-mim ul.lista-habilidades li .nivel-habilidade .circulo-vazio {
     width: 15px;
     height: 15px;
-    background-color: #555555; /* Cor mais escura para círculo vazio */
+    background-color: #555555; 
     border-radius: 50%;
     margin-left: 5px;
 }
@@ -332,8 +328,8 @@ nav a:hover {
 
 .projetos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards Projetos 3 Colunas - REDUZIDO minmax */
-    gap: 30px; /* Reduzi o gap para 30px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -343,20 +339,20 @@ nav a:hover {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição mais suave */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
     display: flex;
     flex-direction: column;
 }
 
 .projeto-card:hover {
-    transform: translateY(-3px); /* Hover mais sutil */
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.7); /* Sombra mais evidente no hover */
+    transform: translateY(-3px); /
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.7); 
 }
 
 .projeto-card img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens - REDUZIDO */
-    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+    height: 200px; 
+    object-fit: cover; 
     display: block;
     transition: opacity 0.3s ease;
 }
@@ -366,8 +362,8 @@ nav a:hover {
 }
 
 .projeto-card h3 {
-    font-size: 1.6em; /* Tamanho do título reduzido - REDUZIDO */
-    padding: 25px; /* Reduzi o padding interno - REDUZIDO */
+    font-size: 1.6em; 
+    padding: 25px; 
     text-align: center;
     color: #FFFFFF;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
@@ -375,21 +371,21 @@ nav a:hover {
 }
 
 .projeto-card p {
-    padding: 0 25px 15px; /* Ajustei o padding do parágrafo - REDUZIDO */
-    font-size: 1.1em; /* Tamanho da fonte da descrição reduzido - REDUZIDO */
-    line-height: 1.6; /* Ajustei o line-height para melhor leitura */
+    padding: 0 25px 15px; 
+    font-size: 1.1em; 
+    line-height: 1.6; 
     color: #D0D0D0;
 }
 
 .projeto-botao {
     display: block;
-    padding: 15px; /* Reduzi o padding do botão - REDUZIDO */
+    padding: 15px; 
     background-color: #E87E04;
     color: #000000;
     text-align: center;
     text-decoration: none;
     font-weight: bolder;
-    font-size: 1em; /* Tamanho da fonte do botão reduzido - REDUZIDO */
+    font-size: 1em; 
     border-radius: 0 0 15px 15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.4);
@@ -399,7 +395,7 @@ nav a:hover {
 .projeto-botao:hover {
     background-color: #FFFFFF;
     color: #000000;
-    transform: scale(1.02); /* Hover do botão mais sutil */
+    transform: scale(1.02);
 }
 
 
@@ -412,6 +408,8 @@ footer {
     border-top: 3px solid #222840;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;    
+    padding-bottom: 80px; 
 }
 
 footer::before {
@@ -538,30 +536,26 @@ footer p.desenvolvedor {
     z-index: 2;
 }
 
-/* ... (Seus estilos CSS existentes) ... */
-
-/* ... (Seus estilos CSS existentes) ... */
 
 /* HEADER CONTAINER FLEXBOX - NOVO */
 header .header-container {
     display: flex;
-    justify-content: space-between; /* Menu e Logo/Título nas pontas */
-    align-items: center; /* Alinhamento vertical */
-}
+    justify-content: space-between; 
+    align-items: center; 
 
 /* MENU DESKTOP */
 nav.desktop-nav {
-    /* Mantém os estilos existentes do seu menu nav */
-    position: static; /* Remova position absolute/fixed que possa interferir */
+   
+    position: static; 
     top: auto;
     left: auto;
-    padding: 0; /* Remova padding que possa interferir */
-    width: auto; /* Remova width que possa interferir */
-    justify-content: flex-end; /* Alinha o menu à direita no desktop */
+    padding: 0; 
+    width: auto; 
+    justify-content: flex-end; 
 }
 
 nav.desktop-nav ul {
-    /* Mantém os estilos existentes do seu menu nav ul */
+   
     list-style: none;
     padding: 0;
     margin: 0;
@@ -573,7 +567,7 @@ nav.desktop-nav li {
 }
 
 nav.desktop-nav a {
-    /* Mantém os estilos existentes do seu menu nav a */
+    
     text-decoration: none;
     color: #E5E5E5;
     font-weight: bold;
@@ -592,12 +586,12 @@ nav.desktop-nav a:hover {
 
 /* MENU MOBILE (INICIALMENTE OCULTO NO DESKTOP) */
 nav.mobile-nav {
-    display: none; /* Oculto por padrão no desktop */
+    display: none; 
 }
 
 /* BOTÃO HAMBURGUER (OCULTO NO DESKTOP) */
 .hamburger-menu {
-    display: none; /* Oculto por padrão no desktop */
+    display: none; 
     background: none;
     border: none;
     color: #FFFFFF;
@@ -607,7 +601,7 @@ nav.mobile-nav {
 }
 
 .hamburger-menu:focus {
-    outline: none; /* Remove o foco padrão ao clicar */
+    outline: none; 
 }
 
 /* style.css - CÓDIGO ADICIONAL - IMPEDIR ROLAGEM DO BODY QUANDO MENU MOBILE ABERTO (OPCIONAL) */
