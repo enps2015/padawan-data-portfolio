@@ -87,7 +87,7 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 4.5em;
+    font-size: 3.5em;
     margin-bottom: 20px;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
 }
@@ -302,7 +302,6 @@ nav a:hover {
     transform: scale(1.07);
 }
 
-
 /* Seção Projetos */
 #projetos {
     background-color: #0B0B17;
@@ -313,7 +312,7 @@ nav a:hover {
 
 #projetos h2 {
     color: #E87E04;
-    font-size: 3.5em;
+    font-size: 2.5em;
     margin-bottom: 40px;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
 }
@@ -328,7 +327,7 @@ nav a:hover {
 
 .projetos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards Projetos 3 Colunas - REDUZIDO minmax */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
@@ -342,7 +341,7 @@ nav a:hover {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
-    max-height: 650px; /* **ADICIONADO:** Altura máxima para os cards (ajuste conforme necessário) */
+    max-height: 580px; /* Altura máxima dos cards para desktop */
 }
 
 .projeto-card:hover {
@@ -356,6 +355,7 @@ nav a:hover {
     object-fit: cover;
     display: block;
     transition: opacity 0.3s ease;
+    margin-bottom: 8px;
 }
 
 .projeto-card img:hover {
@@ -363,8 +363,9 @@ nav a:hover {
 }
 
 .projeto-card h3 {
-    font-size: 1.6em;
-    padding: 20px; /* **REDUZIDO:** Padding do título do card */
+    font-size: 1.0em;
+    padding: 15px 20px 10px;
+    margin-bottom: 0px;
     text-align: center;
     color: #FFFFFF;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
@@ -372,25 +373,27 @@ nav a:hover {
 }
 
 .projeto-card p {
-    padding: 0 20px 10px; /* **REDUZIDO:** Padding da descrição do card */
-    font-size: 1.1em;
-    line-height: 1.6;
+    padding: 0 20px 15px;
+    font-size: 0.9em;
+    line-height: 1.4;
     color: #D0D0D0;
-    overflow: hidden;         /* **ADICIONADO:** Esconde o texto que ultrapassa a altura máxima */
-    display: -webkit-box;     /* **ADICIONADO:** Habilita o "webkit-box" para limitar linhas */
-    -webkit-line-clamp: 4;   /* **ADICIONADO:** Limita a descrição a 4 linhas (ajuste conforme necessário) */
-    -webkit-box-orient: vertical; /* **ADICIONADO:** Define a orientação vertical do "webkit-box" */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+    text-align: justify; /* **ADICIONADO:** Justifica o texto da descrição! - TOQUE FINAL! */
 }
 
 .projeto-botao {
     display: block;
-    padding: 15px;
+    padding: 12px;
     background-color: #E87E04;
     color: #000000;
     text-align: center;
     text-decoration: none;
     font-weight: bolder;
-    font-size: 1em;
+    font-size: 0.9em;
     border-radius: 0 0 15px 15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.4);
@@ -402,55 +405,19 @@ nav a:hover {
     color: #000000;
     transform: scale(1.03);
 }
-.projeto-card h3 {
-    font-size: 1.6em; 
-    padding: 25px; 
-    text-align: center;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
-    flex-grow: 1;
-}
-
-.projeto-card p {
-    padding: 0 25px 15px; 
-    font-size: 1.1em; 
-    line-height: 1.6; 
-    color: #D0D0D0;
-}
-
-.projeto-botao {
-    display: block;
-    padding: 15px; 
-    background-color: #E87E04;
-    color: #000000;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bolder;
-    font-size: 1em; 
-    border-radius: 0 0 15px 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.4);
-    margin-top: auto;
-}
-
-.projeto-botao:hover {
-    background-color: #FFFFFF;
-    color: #000000;
-    transform: scale(1.02);
-}
 
 
 /* Footer */
 footer {
     background-color: #0B0B17;
     color: #FFFFFF;
-    padding: 120px 0;
+    padding: 80px 0 60px; /* **REDUZIDO AINDA MAIS:** Padding vertical do footer - ULTRA-COMPACTO! */
     text-align: center;
     border-top: 3px solid #222840;
     position: relative;
     overflow: hidden;
-    padding-top: 60px;    
-    padding-bottom: 60px; 
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 footer::before {
@@ -501,30 +468,31 @@ footer h2 {
 .contato-info {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
+    display: flex; /* **HABILITADO FLEXBOX NO CONTAINER CONTATO-INFO!** */
     justify-content: space-around;
-    gap: 80px;
+    gap: 40px; /* **REDUZIDO:** Gap entre os itens contato-info */
     flex-wrap: wrap;
     position: relative;
     z-index: 2;
+    align-items: flex-end; /* **ADICIONADO:** Alinha itens na parte inferior (flex-end) */
 }
 
 .contato-item {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px; /* **REDUZIDO:** Margin bottom dos itens contato-item */
 }
 
 .contato-item i {
     font-size: 3.5em;
     color: #E87E04;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* **REDUZIDO:** Margin bottom dos ícones contato-item */
     display: block;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
 }
 
 .contato-item p {
-    font-size: 1.4em;
-    line-height: 1.9;
+    font-size: 1.2em; /* **REDUZIDO:** Fonte do texto contato-item */
+    line-height: 1.7; /* **REDUZIDO:** Line-height do texto contato-item */
     color: #E0E0E0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -542,7 +510,7 @@ footer h2 {
 
 
 .social-media {
-    margin-top: 40px;
+    margin-top: 20px; /* **REDUZIDO:** Margin top social-media */
     display: flex;
     justify-content: center;
     position: relative;
@@ -551,12 +519,12 @@ footer h2 {
 
 .social-media a {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px; /* **REDUZIDO:** Margin lateral dos ícones sociais */
 }
 
 .social-media img {
-    width: 45px;
-    height: 45px;
+    width: 40px; /* **REDUZIDO:** Largura dos ícones sociais */
+    height: 40px; /* **REDUZIDO:** Altura dos ícones sociais */
     transition: transform 0.3s ease;
     filter: grayscale(100%);
     opacity: 0.7;
@@ -569,8 +537,8 @@ footer h2 {
 }
 
 footer p.desenvolvedor {
-    margin-top: 70px;
-    font-size: 1.2em;
+    margin-top: 50px; /* **REDUZIDO:** Margin top do texto desenvolvedor */
+    font-size: 1.1em;  /* **REDUZIDO:** Fonte do texto desenvolvedor */
     color: #CCCCCC;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     position: relative;
