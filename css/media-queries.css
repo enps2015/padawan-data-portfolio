@@ -72,7 +72,7 @@
         #habilidades h3,
         #projetos h2,
         #contato h2 {
-            font-size: 1.5em; /* Reduzi o tamanho dos títulos principais */
+            font-size: 2.0em; /* Reduzi o tamanho dos títulos principais */
         }
 
         .projeto-card h3 {
