@@ -1,6 +1,5 @@
-/* Estilos para telas menores (Mobile) */
-@media (max-width: 768px) { /* Ajuste o breakpoint conforme necessário */
-
+/* media-queries.css */
+@media (max-width: 768px) {
     /* OCULTA O MENU DESKTOP */
     nav.desktop-nav {
         display: none;
@@ -8,25 +7,37 @@
 
     /* EXIBE O BOTÃO HAMBURGUER */
     .hamburger-menu {
-        display: block; /* Exibe o botão hamburger no mobile */
+        display: block;
+        align-self: flex-end; /* Alinha o botão hamburger à direita no header */
+        margin-top: 10px; /* Adiciona margem superior para espaçamento */
     }
+
+    /* HEADER - AJUSTES MOBILE */
+    header .header-container {
+        flex-direction: column; /* Empilha header-container verticalmente em mobile */
+        align-items: flex-start; /* Alinha itens à esquerda no header-container */
+        position: relative; /* **ADICIONADO: position relative no container do header** */
+    }
+
 
     /* EXIBE O MENU MOBILE (VERTICAL) */
     nav.mobile-nav {
         display: none; /* Inicialmente oculto */
-        position: absolute; /* Posicionamento sobre o conteúdo */
-        top: 80px; /* Ajuste conforme a altura do seu header */
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background-color: #222840; /* Cor de fundo do menu mobile */
-        z-index: 100; /* Garante que o menu fique acima do conteúdo */
-        padding: 20px;
-        text-align: center; /* Centraliza os itens do menu */
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Sombra para destacar o menu */
+        height: 100%;
+        background-color: #222840;
+        z-index: 100;
+        padding: 80px 20px 20px;
+        text-align: center;
+        box-shadow: none;
+        overflow-y: auto;
     }
 
-    nav.mobile-nav.active {  /* Classe 'active' adicionada pelo JavaScript */
-        display: block; /* Exibe o menu quando a classe 'active' é adicionada */
+    nav.mobile-nav.active {
+        display: block;
     }
 
     nav.mobile-nav ul {
@@ -54,5 +65,72 @@
     nav.mobile-nav a:hover {
         background-color: #FCA311;
         color: #000000;
+    }
+
+        /* AJUSTE TAMANHO DOS TÍTULOS DAS SEÇÕES */
+        #sobre-mim h2,
+        #habilidades h3,
+        #projetos h2,
+        #contato h2 {
+            font-size: 2.8em; /* Reduzi o tamanho dos títulos principais */
+        }
+
+        .projeto-card h3 {
+            font-size: 1.5em; /* Reduzi o tamanho dos títulos dos cards de projetos */
+        }
+
+        .hero h1 {
+            font-size: 3.0em; /* Reduzi o tamanho do título Hero */
+        }
+
+            /* SEÇÃO SOBRE MIM - LAYOUT VERTICAL EM MOBILE */
+    .sobre-mim-conteudo-superior {
+        flex-direction: column; /* Empilha verticalmente em mobile */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .sobre-mim-esquerda {
+        width: 100%; /* Ocupa toda a largura */
+        padding-right: 0; /* Remove padding lateral */
+        margin-bottom: 30px; /* Espaçamento abaixo do texto */
+    }
+
+    .sobre-mim-direita {
+        width: 80%; /* Reduzi um pouco a largura da foto em mobile */
+        margin: 0 auto; /* Centraliza a foto */
+    }
+
+    .foto-circular-container {
+        max-width: 350px; /* Reduzi o tamanho máximo do container da foto */
+    }
+
+    /* SEÇÃO HABILIDADES - AJUSTE CARDS CORTANDO - REDUÇÃO MAIS AGRESSIVA */
+    #sobre-mim ul.lista-habilidades {
+        grid-template-columns: 1fr; /* **ALTERADO**: Uma coluna em mobile */
+        gap: 15px; /* Reduzi ainda mais o gap */
+    }
+
+    #sobre-mim ul.lista-habilidades li {
+        padding: 20px; /* Aumentei um pouco o padding VERTICAL dos cards para "respiro" */
+        flex-direction: column; /* **ALTERADO**: Itens em coluna dentro do card */
+        text-align: center; /* Centraliza texto nos cards */
+        align-items: center; /* Centraliza itens verticalmente nos cards */
+    }
+
+
+    #sobre-mim ul.lista-habilidades li .icone-habilidade {
+        font-size: 2.5em; /* Aumentei um pouco o ícone */
+        margin-right: 0; /* Removi margin right do icone */
+        margin-bottom: 10px; /* Adicionei margin bottom para icone */
+        width: auto; /* Removi width fixo do icone */
+    }
+
+    #sobre-mim ul.lista-habilidades li .nome-habilidade {
+        font-size: 1.2em; /* Aumentei um pouco a fonte do nome */
+        margin-right: 0; /* Removi margin right do nome */
+    }
+
+    #sobre-mim ul.lista-habilidades li .nivel-habilidade {
+        justify-content: center; /* Centraliza os círculos de nível */
     }
 }

@@ -609,3 +609,10 @@ nav.mobile-nav {
 .hamburger-menu:focus {
     outline: none; /* Remove o foco padrão ao clicar */
 }
+
+/* style.css - CÓDIGO ADICIONAL - IMPEDIR ROLAGEM DO BODY QUANDO MENU MOBILE ABERTO (OPCIONAL) */
+body.mobile-menu-open {
+    overflow: hidden; /* Impede rolagem do body */
+    position: fixed; /* Fixa o body na posição atual */
+    width: 100%;    /* Garante que o body fixo ocupe 100% da largura */
+}
