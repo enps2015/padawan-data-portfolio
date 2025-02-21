@@ -67,23 +67,28 @@
         color: #000000;
     }
 
-        /* AJUSTE TAMANHO DOS TÍTULOS DAS SEÇÕES */
-        #sobre-mim h2,
-        #habilidades h3,
-        #projetos h2,
-        #contato h2 {
-            font-size: 2.0em; /* Reduzi o tamanho dos títulos principais */
-        }
+    /* AJUSTE TAMANHO DOS TÍTULOS DAS SEÇÕES */
+    #sobre-mim h2,
+    #habilidades h3,
+    #projetos h2,
+    #contato h2 {
+        font-size: 1.5em; /* Reduzi o tamanho dos títulos principais */
+    }
 
-        .projeto-card h3 {
-            font-size: 1.5em; /* Reduzi o tamanho dos títulos dos cards de projetos */
-        }
+    .projeto-card h3 {
+        font-size: 1.0em; /* Reduzi o tamanho dos títulos dos cards de projetos */
+    }
 
-        .hero h1 {
-            font-size: 3.0em; /* Reduzi o tamanho do título Hero */
-        }
+    .hero h1 {
+        font-size:2.0em; /* Reduzi o tamanho do título Hero */
+    }
 
-            /* SEÇÃO SOBRE MIM - LAYOUT VERTICAL EM MOBILE */
+    .hero p {
+        font-size:1em;/* Reduzi o tamanho do título Hero */
+    }
+
+
+     /* SEÇÃO SOBRE MIM - LAYOUT VERTICAL EM MOBILE */
     .sobre-mim-conteudo-superior {
         flex-direction: column; /* Empilha verticalmente em mobile */
         text-align: center; /* Centraliza o texto */
@@ -134,24 +139,11 @@
         justify-content: center; /* Centraliza os círculos de nível */
     }
 
-        .contato-item p {
-        font-size: 1.0em;
+    .contato-item p {
+        font-size: 0.em;
     }
     
     yoda-quote p {
-        font-size: 1.0em;
-    }
-
-    /* Footer */
-    footer {
-        background-color: #0B0B17;
-        color: #FFFFFF;
-        padding: 100px 0;
-        text-align: center;
-        border-top: 3px solid #222840;
-        position: relative;
-        overflow: hidden;
-        padding-top: 20px;    
-        padding-bottom: 20px;
+        font-size: 0.7em;
     }
 }
