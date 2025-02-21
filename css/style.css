@@ -303,7 +303,7 @@ nav a:hover {
 }
 
 
-//* Seção Projetos */
+/* Seção Projetos */
 #projetos {
     background-color: #0B0B17;
     color: #FFFFFF;
@@ -313,7 +313,7 @@ nav a:hover {
 
 #projetos h2 {
     color: #E87E04;
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin-bottom: 40px;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
 }
@@ -328,8 +328,8 @@ nav a:hover {
 
 .projetos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards Projetos 3 Colunas - REDUZIDO minmax */
+    gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -339,20 +339,21 @@ nav a:hover {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
+    max-height: 650px; /* **ADICIONADO:** Altura máxima para os cards (ajuste conforme necessário) */
 }
 
 .projeto-card:hover {
-    transform: translateY(-3px); /
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.7); 
+    transform: translateY(-3px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.7);
 }
 
 .projeto-card img {
     width: 100%;
-    height: 200px; 
-    object-fit: cover; 
+    height: 200px;
+    object-fit: cover;
     display: block;
     transition: opacity 0.3s ease;
 }
@@ -361,6 +362,46 @@ nav a:hover {
     opacity: 0.9;
 }
 
+.projeto-card h3 {
+    font-size: 1.6em;
+    padding: 20px; /* **REDUZIDO:** Padding do título do card */
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    flex-grow: 1;
+}
+
+.projeto-card p {
+    padding: 0 20px 10px; /* **REDUZIDO:** Padding da descrição do card */
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #D0D0D0;
+    overflow: hidden;         /* **ADICIONADO:** Esconde o texto que ultrapassa a altura máxima */
+    display: -webkit-box;     /* **ADICIONADO:** Habilita o "webkit-box" para limitar linhas */
+    -webkit-line-clamp: 4;   /* **ADICIONADO:** Limita a descrição a 4 linhas (ajuste conforme necessário) */
+    -webkit-box-orient: vertical; /* **ADICIONADO:** Define a orientação vertical do "webkit-box" */
+}
+
+.projeto-botao {
+    display: block;
+    padding: 15px;
+    background-color: #E87E04;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1em;
+    border-radius: 0 0 15px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.4);
+    margin-top: auto;
+}
+
+.projeto-botao:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.03);
+}
 .projeto-card h3 {
     font-size: 1.6em; 
     padding: 25px; 
