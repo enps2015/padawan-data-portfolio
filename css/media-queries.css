@@ -1,0 +1,58 @@
+/* Estilos para telas menores (Mobile) */
+@media (max-width: 768px) { /* Ajuste o breakpoint conforme necessário */
+
+    /* OCULTA O MENU DESKTOP */
+    nav.desktop-nav {
+        display: none;
+    }
+
+    /* EXIBE O BOTÃO HAMBURGUER */
+    .hamburger-menu {
+        display: block; /* Exibe o botão hamburger no mobile */
+    }
+
+    /* EXIBE O MENU MOBILE (VERTICAL) */
+    nav.mobile-nav {
+        display: none; /* Inicialmente oculto */
+        position: absolute; /* Posicionamento sobre o conteúdo */
+        top: 80px; /* Ajuste conforme a altura do seu header */
+        left: 0;
+        width: 100%;
+        background-color: #222840; /* Cor de fundo do menu mobile */
+        z-index: 100; /* Garante que o menu fique acima do conteúdo */
+        padding: 20px;
+        text-align: center; /* Centraliza os itens do menu */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Sombra para destacar o menu */
+    }
+
+    nav.mobile-nav.active {  /* Classe 'active' adicionada pelo JavaScript */
+        display: block; /* Exibe o menu quando a classe 'active' é adicionada */
+    }
+
+    nav.mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: column; /* Itens em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    nav.mobile-nav li {
+        margin-bottom: 20px; /* Espaçamento entre os itens */
+    }
+
+    nav.mobile-nav a {
+        display: block; /* Links ocupam toda a largura */
+        color: #E5E5E5;
+        text-decoration: none;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border: 2px solid #E5E5E5;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav.mobile-nav a:hover {
+        background-color: #FCA311;
+        color: #000000;
+    }
+}

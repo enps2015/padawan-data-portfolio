@@ -1,0 +1,611 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    background-color: #0B0B17;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-image: url('../imagens/header-darth01.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+nav {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #E5E5E5;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 14px 30px;
+    border: 2px solid #E5E5E5;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #FCA311;
+    color: #000000;
+}
+
+
+.hero {
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+}
+
+.hero p {
+    font-size: 1.7em;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    color: #D0D0D0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 20px 45px;
+    background-color: #E87E04;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.2em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
+}
+
+.hero-cta:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.07);
+}
+
+/* Seção Sobre Mim */
+#sobre-mim {
+    background-color: #222840;
+    padding: 120px 0;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#sobre-mim .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.sobre-mim-conteudo-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.sobre-mim-esquerda {
+    width: 55%;
+    padding-right: 70px;
+    text-align: left;
+}
+
+.sobre-mim-direita {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+/* ATUALIZAÇÂO - FOTO RETANGULAR */
+.perfil-foto {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    border: 6px solid #E87E04;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    max-height: none;
+}
+
+
+.foto-circular-container {
+    position: relative;
+    width: 450px; /* Ajuste se necessário */
+    height: auto; /* Importante para manter a proporção */
+    border-radius: 10px;  /* FOTO RETANGULAR */
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: block;
+}
+/* REMOVIDO O FUNDO CIRCULAR */
+.foto-circular-container::before {
+   content: none;
+}
+
+#sobre-mim h2 {
+    color: #E87E04;
+    font-size: 3.5em;
+    margin-bottom: 50px;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/* Adicionado: Lista de Pontos-Chave */
+.sobre-mim-pontos-chave {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.sobre-mim-pontos-chave li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+#sobre-mim h3 {
+    font-size: 2.2em;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* ATUALIZAÇÂO - Lista de Habilidades (Novo Design) */
+
+#sobre-mim ul.lista-habilidades {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px; /* Aumentei um pouco a margem */
+    max-width: 800px; /* Aumentei a largura máxima */
+    margin-left: auto;
+    margin-right: auto;
+    display: grid; /* Usando Grid para layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaçamento entre as habilidades */
+  }
+
+  /* Estilo de cada item da lista (habilidade) */
+  #sobre-mim ul.lista-habilidades li {
+    background-color: #0B0B17;
+    padding: 20px; /* Aumentei o padding */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Sombra mais suave */
+    transition: transform 0.2s ease; /* Transição suave */
+  }
+
+  /* Efeito hover nos itens da lista */
+    #sobre-mim ul.lista-habilidades li:hover {
+        transform: translateY(-5px); /* Leve elevação */
+    }
+
+  /* Container do ícone */
+  #sobre-mim ul.lista-habilidades li .icone-habilidade {
+    margin-right: 20px;
+    font-size: 2em; /* Ajuste o tamanho do ícone */
+    color: #E87E04; /* Cor do ícone */
+    width: 40px; /* Largura fixa para o ícone (ajuste se necessário) */
+    text-align: center; /* Centraliza o ícone horizontalmente */
+  }
+
+  /* Nome da habilidade */
+  #sobre-mim ul.lista-habilidades li .nome-habilidade {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    flex-grow: 1; /* Ocupa o espaço restante */
+    font-size: 1.1em;
+  }
+
+/* Nível da habilidade (círculos) */
+#sobre-mim ul.lista-habilidades li .nivel-habilidade {
+    display: flex;
+    align-items: center;
+}
+
+/* Círculo preenchido */
+#sobre-mim ul.lista-habilidades li .nivel-habilidade .circulo-preenchido {
+    width: 15px;
+    height: 15px;
+    background-color: #E87E04;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+/* Círculo vazio */
+#sobre-mim ul.lista-habilidades li .nivel-habilidade .circulo-vazio {
+    width: 15px;
+    height: 15px;
+    background-color: #555555; /* Cor mais escura para círculo vazio */
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.contato-botao {
+    display: inline-block;
+    padding: 18px 40px;
+    background-color: #E87E04;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.3em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+}
+
+.contato-botao:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.07);
+}
+
+
+//* Seção Projetos */
+#projetos {
+    background-color: #0B0B17;
+    color: #FFFFFF;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#projetos h2 {
+    color: #E87E04;
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+}
+
+.projetos-descricao {
+    max-width: 900px;
+    margin: 30px auto 70px;
+    font-size: 1.3em;
+    line-height: 1.8;
+    color: #D0D0D0;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards Projetos 3 Colunas - REDUZIDO minmax */
+    gap: 30px; /* Reduzi o gap para 30px */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projeto-card {
+    background-color: #222840;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição mais suave */
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card:hover {
+    transform: translateY(-3px); /* Hover mais sutil */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.7); /* Sombra mais evidente no hover */
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens - REDUZIDO */
+    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.projeto-card img:hover {
+    opacity: 0.9;
+}
+
+.projeto-card h3 {
+    font-size: 1.6em; /* Tamanho do título reduzido - REDUZIDO */
+    padding: 25px; /* Reduzi o padding interno - REDUZIDO */
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    flex-grow: 1;
+}
+
+.projeto-card p {
+    padding: 0 25px 15px; /* Ajustei o padding do parágrafo - REDUZIDO */
+    font-size: 1.1em; /* Tamanho da fonte da descrição reduzido - REDUZIDO */
+    line-height: 1.6; /* Ajustei o line-height para melhor leitura */
+    color: #D0D0D0;
+}
+
+.projeto-botao {
+    display: block;
+    padding: 15px; /* Reduzi o padding do botão - REDUZIDO */
+    background-color: #E87E04;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1em; /* Tamanho da fonte do botão reduzido - REDUZIDO */
+    border-radius: 0 0 15px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.4);
+    margin-top: auto;
+}
+
+.projeto-botao:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.02); /* Hover do botão mais sutil */
+}
+
+
+/* Footer */
+footer {
+    background-color: #0B0B17;
+    color: #FFFFFF;
+    padding: 120px 0;
+    text-align: center;
+    border-top: 3px solid #222840;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #222840 10%, #222840 90%, rgba(0,0,0,0) 100%);
+    opacity: 0.8;
+    z-index: 1;
+    animation: luzesFooter 10s linear infinite;
+    background-size: 100% 200%;
+}
+
+@keyframes luzesFooter {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+
+footer h2 {
+    color: #E87E04;
+    font-size: 3.5em;
+    margin-bottom: 50px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+.yoda-quote {
+    font-style: italic;
+    font-size: 1.5em;
+    line-height: 2.2;
+    margin-bottom: 60px;
+    color: #CCCCCC;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+}
+
+
+.contato-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 80px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.contato-item {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contato-item i {
+    font-size: 3.5em;
+    color: #E87E04;
+    margin-bottom: 20px;
+    display: block;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+}
+
+.contato-item p {
+    font-size: 1.4em;
+    line-height: 1.9;
+    color: #E0E0E0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.contato-info a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contato-info a:hover {
+    color: #E87E04;
+    transform: scale(1.05);
+}
+
+
+.social-media {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.social-media img {
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+footer p.desenvolvedor {
+    margin-top: 70px;
+    font-size: 1.2em;
+    color: #CCCCCC;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+/* ... (Seus estilos CSS existentes) ... */
+
+/* ... (Seus estilos CSS existentes) ... */
+
+/* HEADER CONTAINER FLEXBOX - NOVO */
+header .header-container {
+    display: flex;
+    justify-content: space-between; /* Menu e Logo/Título nas pontas */
+    align-items: center; /* Alinhamento vertical */
+}
+
+/* MENU DESKTOP */
+nav.desktop-nav {
+    /* Mantém os estilos existentes do seu menu nav */
+    position: static; /* Remova position absolute/fixed que possa interferir */
+    top: auto;
+    left: auto;
+    padding: 0; /* Remova padding que possa interferir */
+    width: auto; /* Remova width que possa interferir */
+    justify-content: flex-end; /* Alinha o menu à direita no desktop */
+}
+
+nav.desktop-nav ul {
+    /* Mantém os estilos existentes do seu menu nav ul */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav.desktop-nav li {
+    margin-left: 40px;
+}
+
+nav.desktop-nav a {
+    /* Mantém os estilos existentes do seu menu nav a */
+    text-decoration: none;
+    color: #E5E5E5;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 14px 30px;
+    border: 2px solid #E5E5E5;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav.desktop-nav a:hover {
+    background-color: #FCA311;
+    color: #000000;
+}
+
+
+/* MENU MOBILE (INICIALMENTE OCULTO NO DESKTOP) */
+nav.mobile-nav {
+    display: none; /* Oculto por padrão no desktop */
+}
+
+/* BOTÃO HAMBURGUER (OCULTO NO DESKTOP) */
+.hamburger-menu {
+    display: none; /* Oculto por padrão no desktop */
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-menu:focus {
+    outline: none; /* Remove o foco padrão ao clicar */
+}
