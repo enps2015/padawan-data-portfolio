@@ -1,4 +1,3 @@
-/* media-queries.css */
 @media (max-width: 768px) {
     /* OCULTA O MENU DESKTOP */
     nav.desktop-nav {
@@ -18,7 +17,6 @@
         align-items: flex-start; /* Alinha itens à esquerda no header-container */
         position: relative; /* **ADICIONADO: position relative no container do header** */
     }
-
 
     /* EXIBE O MENU MOBILE (VERTICAL) */
     nav.mobile-nav {
@@ -87,11 +85,9 @@
         font-size:1em;/* Reduzi o tamanho do título Hero */
     }
 
-
-     /* SEÇÃO SOBRE MIM - LAYOUT VERTICAL EM MOBILE */
+    /* SEÇÃO SOBRE MIM - LAYOUT VERTICAL EM MOBILE */
     .sobre-mim-conteudo-superior {
-        flex-direction: column; /* Empilha verticalmente em mobile */
-        text-align: center; /* Centraliza o texto */
+        grid-template-columns: 1fr; /* Mantenha uma coluna em telas menores */
     }
 
     .sobre-mim-esquerda {
@@ -122,7 +118,6 @@
         align-items: center; /* Centraliza itens verticalmente nos cards */
     }
 
-
     #sobre-mim ul.lista-habilidades li .icone-habilidade {
         font-size: 2.5em; /* Aumentei um pouco o ícone */
         margin-right: 0; /* Removi margin right do icone */
@@ -145,5 +140,62 @@
     
     yoda-quote p {
         font-size: 0.7em;
+    }
+
+    .profile-container {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .sobre-mim-texto {
+        padding: 20px;
+    }
+
+    .force-meter {
+        height: 20px;
+    }
+
+    .force-text {
+        font-size: 0.7em;
+    }
+
+    .fixed-nav {
+        padding: 0.5rem;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes para a seção de projetos */
+    .projetos-grid {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+    }
+
+    .projeto-card img {
+        height: auto; /* Ajusta a altura da imagem para caber no card */
+        max-height: 200px; /* Limite a altura máxima da imagem */
+    }
+
+    .projeto-card p {
+        font-size: 0.9em; /* Ajuste o tamanho da fonte para caber no card */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .sw-button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .sobre-mim-texto p {
+        font-size: 1em;
+        line-height: 1.6;
     }
 }

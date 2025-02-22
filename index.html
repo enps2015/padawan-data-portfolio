@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eric Pimentel - Data Science Portfolio</title>
+    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/media-queries.css">
-        <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="css/star-wars.css">
+    <meta name="description" content="Portfólio de Data Science de Eric Pimentel - Transformando dados em insights acionáveis">
+    <meta name="keywords" content="data science, análise de dados, python, machine learning, portfolio">
+    <meta name="author" content="Eric Pimentel">
+    <meta property="og:title" content="Eric Pimentel - Data Science Portfolio">
+    <meta property="og:description" content="Portfólio de Data Science de Eric Pimentel - Transformando dados em insights acionáveis">
+<meta property="og:image" content="https://seu-site.com/imagens/portfolio-preview.png">
+<meta property="og:url" content="https://seu-site.com">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eric Pimentel - Data Science Portfolio">
+    <meta name="twitter:description" content="Portfólio de Data Science de Eric Pimentel - Transformando dados em insights acionáveis">
+    <meta name="twitter:image" content="URL_DA_SUA_IMAGEM_PREVIEW">
+    
+    <link rel="canonical" href="https://seu-site.com">
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QF4P4HKZVD"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,38 +36,58 @@
     
       gtag('config', 'G-QF4P4HKZVD');
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Eric Pimentel",
+      "jobTitle": "Data Scientist",
+      "url": "https://seu-site.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/eric-np-santos/",
+        "https://github.com/enps2015"
+      ]
+    }
+    </script>
 </head>
 <body>
+    <!-- PRIMEIRO ELEMENTO DO BODY -->
+    <nav class="fixed-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#sobre-mim" class="nav-button">Sobre Mim</a></li>
+                <li><a href="#habilidades" class="nav-button">Poderes Jedi</a></li>
+                <li><a href="#projetos" class="nav-button">Missões</a></li>
+                <li><a href="#contato" class="nav-button">Contato</a></li>
+            </ul>
+            <!-- Botão Hamburguer -->
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="#sobre-mim" class="nav-button">Sobre Mim</a></li>
+            <li><a href="#habilidades" class="nav-button">Poderes Jedi</a></li>
+            <li><a href="#projetos" class="nav-button">Missões</a></li>
+            <li><a href="#contato" class="nav-button">Contato</a></li>
+        </ul>
+    </div>
 
     <header>
-        <div class="container header-container">  <!-- CONTAINER HEADER PARA FLEXBOX -->
-            <nav class="desktop-nav">  <!-- NAV DESKTOP -->
-                <ul>
-                    <li><a href="#sobre-mim">Sobre Mim</a></li>
-                    <li><a href="#habilidades">Poderes Jedi</a></li>
-                    <li><a href="#projetos">Missões Cumpridas</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-    
-            <button class="hamburger-menu">  <!-- BOTÃO MENU HAMBURGUER -->
-                <i class="fas fa-bars"></i>
-            </button>
-    
-            <nav class="mobile-nav">  <!-- NAV MOBILE (INICIALMENTE OCULTO) -->
-                <ul>
-                    <li><a href="#sobre-mim">Sobre Mim</a></li>
-                    <li><a href="#habilidades">Poderes Jedi</a></li>
-                    <li><a href="#projetos">Missões Cumpridas</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>  <!-- FIM CONTAINER HEADER -->
-    
         <div class="hero">
-            <h1>Olá! Seja benvindo! Que a Força dos Dados Esteja Com Você!</h1>
-            <p>Desvendar o poder dos dados é transformar sua carreira com o conhecimento que irá impulsionar o futuro.</p>
+            <h1>Olá! Seja bem-vindo! Que a Força dos Dados Esteja Com Você!</h1>
+            <p>Desvendar o poder dos dados é transformar sua carreira com o conhecimento que impulsionará seu futuro.</p>
             <a href="#sobre-mim" class="hero-cta">Explore Meu Portfólio</a>
+            <div class="lightsaber-loader">
+                <div class="saber-handle"></div>
+                <div class="saber-light"></div>
+            </div>
         </div>
     </header>
 
@@ -61,161 +98,187 @@
             <div class="sobre-mim-conteudo-superior">
                 <div class="sobre-mim-direita">  <!-- DIV DA FOTO - MOVIDA PARA CIMA -->
                     <div class="foto-circular-container">
-                        <img src="imagens/perfil-imagem.jpeg" alt="Foto de Eric Pimentel" class="perfil-foto">
+                        <img src="imagens/perfil-imagem.jpeg" alt="Foto de Eric Pimentel, Engenheiro Eletricista e Data Scientist" class="perfil-foto">
                     </div>
                 </div>
 
                 <div class="sobre-mim-esquerda"> <!-- DIV DO TEXTO - ABAIXO DA FOTO -->
-                    <p>Olá! Sou Eric Pimentel, um Engenheiro Eletricista em transição de carreira, apaixonado por transformar dados em insights acionáveis. Mergulhei de cabeça no universo da tecnologia, impulsionado pela minha curiosidade e pela crença no poder da Data Science para resolver problemas complexos.</p>
-                    <p>Atualmente, sou formado em Análise e Desenvolvimento de Sistemas, com Especialização em Engenharia de Planejamento DevOps e Internet das Coisas - IoT (cursando), onde busco aprofundar meus conhecimentos técnicos em TI. Além disso, participo ativamente de programas de imersão, procurando aprimorar minhas habilidades em programação, análise de dados e Machine Learning.</p>
-                    <p>Minha formação em Engenharia Elétrica me proporcionou uma base sólida em raciocínio lógico e resolução de problemas, qualidades que considero essenciais para um Cientista de Dados. Acredito que minha combinação de experiência técnica, paixão por aprendizado contínuo e habilidades de comunicação me tornam um profissional diferenciado e pronto para enfrentar os desafios da área.</p>
-                    <ul class="sobre-mim-pontos-chave">
-                        <li>🚀 Movido pela paixão em transformar dados em *insights* acionáveis.</li>
-                        <li>💡 Busco aplicar minhas hard skills para contribuir em projetos Inovadores.</li>
-                        <li>🎓 Sempre busco aplicar minhas habilidades para transformar dados em estratégias de negócio.</li>
-                        <li>🏆 Acredito que TUDO é possível quando se tem ajuda.</li>
-                    </ul>
-                    <a href="https://www.linkedin.com/in/eric-np-santos/" target="_blank" class="contato-botao">Contate-me</a>
+                    <!-- Card de Introdução -->
+                    <div class="info-card">
+                        <h3><i class="fas fa-user-astronaut"></i> Quem Sou</h3>
+                        <p>Olá! Sou Eric Pimentel, um Engenheiro Eletricista em transição de carreira, apaixonado por transformar dados em insights acionáveis. Mergulhei de cabeça no universo da tecnologia, impulsionado pela minha curiosidade e pela crença no poder da Data Science para resolver problemas complexos.</p>
+                    </div>
+
+                    <!-- Card de Formação -->
+                    <div class="info-card">
+                        <h3><i class="fas fa-graduation-cap"></i> Formação</h3>
+                        <p>Formado em Análise e Desenvolvimento de Sistemas, com Especialização em Engenharia de Planejamento DevOps e Internet das Coisas - IoT (cursando). Minha formação em Engenharia Elétrica me proporcionou uma base sólida em raciocínio lógico e resolução de problemas.</p>
+                    </div>
+
+                    <!-- Card de Diferenciais -->
+                    <div class="info-card">
+                        <h3><i class="fas fa-rocket"></i> Diferenciais</h3>
+                        <ul class="sobre-mim-pontos-chave">
+                            <li>🚀 Movido pela paixão em transformar dados em insights acionáveis</li>
+                            <li>💡 Aplicação de hard skills em projetos inovadores</li>
+                            <li>🎓 Transformação de dados em estratégias de negócio</li>
+                            <li>🏆 Crença no poder da colaboração</li>
+                        </ul>
+                    </div>
+
+                    <!-- Botão de Contato -->
+                    <a href="https://www.linkedin.com/in/eric-np-santos/" target="_blank" class="contato-botao">
+                        <i class="fab fa-linkedin"></i> Conecte-se Comigo
+                    </a>
                 </div>
             </div>
     
             <div class="sobre-mim-habilidades" id="habilidades">
                 <h3>Habilidades</h3>
                 <ul class="lista-habilidades">
-                    <!-- Hard Skills -->
                     <li>
-                        <span class="icone-habilidade"><i class="fab fa-python"></i></span>
-                        <span class="nome-habilidade">Python</span>
-                        <span class="nivel-habilidade">
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-vazio"></span>
+                        <span class="nome-habilidade">
+                            <i class="fab fa-python icone-habilidade"></i>
+                            Python
                         </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 90%"></div>
+                            </div>
+                            <span class="force-text">Mestre Jedi</span>
+                        </div>
                     </li>
                     <li>
-                        <span class="icone-habilidade"><i class="fas fa-database"></i></span>
-                        <span class="nome-habilidade">SQL</span>
-                        <span class="nivel-habilidade">
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-vazio"></span>
-                            <span class="circulo-vazio"></span>
+                        <span class="nome-habilidade">
+                            <i class="fas fa-database icone-habilidade"></i>
+                            SQL
                         </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 85%"></div>
+                            </div>
+                            <span class="force-text">Cavaleiro Jedi</span>
+                        </div>
                     </li>
                     <li>
-        <span class="icone-habilidade"><i class="fab fa-html5"></i></span>
-        <span class="nome-habilidade">HTML</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    <li>
-        <span class="icone-habilidade"><i class="fab fa-css3-alt"></i></span>
-        <span class="nome-habilidade">CSS</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    <li>
-        <span class="icone-habilidade"><i class="fab fa-js"></i></span>
-        <span class="nome-habilidade">JavaScript</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    <li>
-        <span class="icone-habilidade"><i class="fas fa-cloud"></i></span>
-        <span class="nome-habilidade">Cloud Computing</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    <li>
-        <span class="icone-habilidade"><i class="fas fa-cogs"></i></span>
-        <span class="nome-habilidade">DevOps</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    <li>
-        <span class="icone-habilidade"><i class="fab fa-linux"></i></span>
-        <span class="nome-habilidade">Linux</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    <li>
-        <span class="icone-habilidade"><i class="fab fa-windows"></i></span>
-        <span class="nome-habilidade">Windows</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    <li>
-        <span class="icone-habilidade"><i class="fas fa-robot"></i></span>
-        <span class="nome-habilidade">GenAI (GPT & Gemini)</span>
-        <span class="nivel-habilidade">
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-preenchido"></span>
-            <span class="circulo-vazio"></span>
-        </span>
-    </li>
-    
-                    <!-- Soft Skills (Adicione mais conforme necessário) -->
-                    <li>
-                        <span class="icone-habilidade"><i class="fas fa-users"></i></span>
-                        <span class="nome-habilidade">Comunicação e Trabalho em Equipe</span>
-                        <span class="nivel-habilidade">
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
+                        <span class="nome-habilidade">
+                            <i class="fab fa-html5 icone-habilidade"></i>
+                            HTML
                         </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
                     </li>
                     <li>
-                        <span class="icone-habilidade"><i class="fas fa-brain"></i></span>
-                        <span class="nome-habilidade">Adaptabilidade (Resiliência)</span>
-                        <span class="nivel-habilidade">
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
-                            <span class="circulo-preenchido"></span>
+                        <span class="nome-habilidade">
+                            <i class="fab fa-css3-alt icone-habilidade"></i>
+                            CSS
                         </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fab fa-js icone-habilidade"></i>
+                            JavaScript
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 70%"></div>
+                            </div>
+                            <span class="force-text">Padawan Avançado</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fas fa-cloud icone-habilidade"></i>
+                            Cloud Computing
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fas fa-cogs icone-habilidade"></i>
+                            DevOps
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fab fa-linux icone-habilidade"></i>
+                            Linux
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fab fa-windows icone-habilidade"></i>
+                            Windows
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fas fa-robot icone-habilidade"></i>
+                            GenAI (GPT & Gemini)
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fas fa-users icone-habilidade"></i>
+                            Comunicação e Trabalho em Equipe
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nome-habilidade">
+                            <i class="fas fa-brain icone-habilidade"></i>
+                            Adaptabilidade (Resiliência)
+                        </span>
+                        <div class="skill-level">
+                            <div class="force-meter">
+                                <div class="force-level" style="width: 80%"></div>
+                            </div>
+                            <span class="force-text">Forte neste, a Força é</span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -229,51 +292,55 @@
 
             <div class="projetos-grid">
                 <div class="projeto-card">
-                    <img src="./imagens/projeto01.png" alt="Análise da COVID-19 no Brasil">
+                    <img src="./imagens/projeto01.png" 
+                         alt="Dashboard COVID-19 mostrando gráficos de evolução da pandemia" 
+                         loading="lazy"
+                         width="300"
+                         height="200">
                     <h3>Análise da COVID-19 no Brasil</h3>
                     <p>Dashboard interativo em Streamlit explorando a evolução da pandemia por estado no Brasil. Dados da pandemia COVID-19 no Brasil por estado, com métricas de casos, óbitos e taxa de mortalidade. Visualizações interativas para comparação entre estados e regiões.</p>
-                    <a href="https://github.com/enps2015/analiseCovid19v20" class="projeto-botao">Ver Detalhes</a>
+                    <a href="https://github.com/enps2015/analiseCovid19v20" class="projeto-botao" target="_blank">Ver Detalhes</a>
                 </div>
 
                 <div class="projeto-card">
                     <img src="./imagens/projeto02.png" alt="Análise de Vendas da Adventure Works">
                     <h3>Análise de Vendas da Adventure Works</h3>
                     <p>Dashboard interativo em Streamlit para análise exploratória de dados de vendas da empresa Adventure Works. Análise de receita, lucro, desempenho de produtos, performance de lojas e comportamento de clientes com filtros interativos.</p>
-                    <a href="https://github.com/enps2015/DioAdventureWorks" class="projeto-botao">Ver Detalhes</a>
+                    <a href="https://github.com/enps2015/DioAdventureWorks" class="projeto-botao" target="_blank">Ver Detalhes</a>
                 </div>
 
                 <div class="projeto-card">
                     <img src="./imagens/projeto03.png" alt="Top 100 Livros Amazon - Streamlit">
                     <h3>Top 100 Livros Amazon - Streamlit</h3>
                     <p>Aplicativo web interativo em Streamlit com análise dos Top 100 livros mais vendidos da Amazon em 2023. Filtros por preço máximo, gráficos interativos e página de avaliações específicas para cada livro.</p>
-                    <a href="https://github.com/enps2015/top-100-livros-amazon-streamlit" class="projeto-botao">Ver Detalhes</a>
+                    <a href="https://github.com/enps2015/top-100-livros-amazon-streamlit" class="projeto-botao" target="_blank">Ver Detalhes</a>
                 </div>
 
                 <div class="projeto-card">
                     <img src="./imagens/projeto04.png" alt="Docker Data Science Environment">
                     <h3>Docker Data Science Environment</h3>
                     <p>Ecossistema Dockerizado completo para estudos em Data Science. Integra Jupyter Notebook, PostgreSQL, MetaBase, Grafana e Prometheus. Ambiente simples, replicável e acessível para análise de dados, visualização e monitoramento.</p>
-                    <a href="https://github.com/enps2015/docker-data-science" class="projeto-botao">Ver Detalhes</a>
+                    <a href="https://github.com/enps2015/docker-data-science" class="projeto-botao" target="_blank">Ver Detalhes</a>
                 </div>
 
                 <div class="projeto-card">
                     <img src="./imagens/projeto05.png" alt="Análise de Dados da Imobiliária Bezerra com Power BI">
                     <h3>Análise de Dados da Imobiliária Bezerra com Power BI</h3>
                     <p>Dashboard interativo em Power BI para Imobiliária Bezerra com análise de dados de vendas, imóveis e mercado imobiliário. Insights acionáveis para estratégia de vendas, storytelling com dados e modelagem robusta com DAX e Power Query.</p>
-                    <a href="https://github.com/enps2015/TelosSimuladorNivel8" class="projeto-botao">Ver Detalhes</a>
+                    <a href="https://github.com/enps2015/TelosSimuladorNivel8" class="projeto-botao" target="_blank">Ver Detalhes</a>
                 </div>
                 <div class="projeto-card">
                     <img src="./imagens/projeto06.png" alt="Análise de Vendas de E-commerce - Influenciador com Google Looker Studio">
-                    <h3>Análise de Vendas de E-commerce - Influenciador com Google Looker Studio</h3>
+                    <h3>Análise de Vendas de E-commerce com Google Looker Studio</h3>
                     <p>Dashboard no Looker Studio para análise de vendas de e-commerce de influenciador digital. ETL com Python, integração Google BigQuery e Google Sheets. Métricas de vendas, comportamento do comprador, desempenho geográfico e relatório com recomendações.</p>
-                    <a href="https://github.com/enps2015/TelosSimuladorNivel09" class="projeto-botao">Ver Detalhes</a>
+                    <a href="https://github.com/enps2015/TelosSimuladorNivel09" class="projeto-botao" target="_blank">Ver Detalhes</a>
                 </div>
 
                 <div class="projeto-card">
                     <img src="./imagens/projeto07.png" alt="Explorando gráficos de Violino">
                     <h3>Explorando gráficos de Violino</h3>
                     <p>Análise exploratória do dataset Iris utilizando gráficos de violino com Python (Matplotlib, Seaborn e Plotly). Demonstração prática de análise estatística visual para comparar a distribuição de dados entre diferentes categorias.</p>
-                    <a href="https://github.com/enps2015/graficoViolino" class="projeto-botao">Ver Detalhes</a>
+                    <a href="https://github.com/enps2015/graficoViolino" class="projeto-botao" target="_blank">Ver Detalhes</a>
                 </div>
             </div>
         </div>
@@ -302,5 +369,9 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/star-wars-effects.js"></script>
+    <script src="js/sound-effects.js"></script>
+
 </body>
 </html>
+

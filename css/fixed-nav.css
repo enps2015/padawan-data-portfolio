@@ -1,0 +1,197 @@
+/* Reset para garantir que não haja conflitos */
+nav.fixed-nav {
+    all: initial;
+    * {
+        all: unset;
+    }
+}
+
+/* O MENU FIXO QUE VAI FUNCIONAR NEM QUE A VACA TUSSA! */
+.fixed-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important; /* vw para garantir largura total */
+    height: 45px !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(8px) !important;
+    z-index: 99999999 !important; /* Vai ficar por cima até do The Flash! */
+    border-bottom: 2px solid var(--lightsaber-blue) !important;
+    box-shadow: 0 2px 20px rgba(33, 150, 243, 0.3) !important;
+}
+
+.nav-container {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.nav-links {
+    display: flex !important;
+    gap: 30px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-button {
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 6px 20px !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border-radius: 20px !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+}
+
+.nav-button:hover {
+    color: var(--lightsaber-blue) !important;
+    border-color: var(--lightsaber-blue) !important;
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.3) !important;
+}
+
+/* Garantir espaço para o menu */
+body {
+    padding-top: 45px !important;
+    margin-top: 0 !important;
+}
+
+/* Versão Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* Botão Hamburguer */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 5px 0;
+    background: var(--lightsaber-blue);
+    transition: all 0.3s ease;
+}
+
+/* Menu Mobile */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 2rem 0;
+}
+
+.mobile-menu a {
+    color: var(--jedi-white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    background: linear-gradient(45deg, var(--empire-dark), var(--rebel-orange));
+    transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--lightsaber-glow);
+}
+
+/* Animação do Hamburguer */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Garantir que o menu fixo tenha prioridade máxima */
+body > nav.fixed-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 45px !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    z-index: 999999 !important;
+    display: block !important;
+    border-bottom: 1px solid var(--lightsaber-blue) !important;
+    transform: none !important;
+    pointer-events: auto !important;
+}
+
+/* Garantir que o container do menu também tenha prioridade */
+body > nav.fixed-nav .nav-container {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+} 

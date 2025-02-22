@@ -75,13 +75,24 @@ Para apreciar a **beleza e o profissionalismo** deste portfólio em sua totalida
 
 **🖥️ Tela Desktop Full-Screen:**
 
-![portfolio-full-screen](./imagens/portfolio-full-screen.png)
+![portfolio-full-screen](./imagens/portfolio-full-screen02.png)
 
 **📱 Tela Mobile Full-Screen:**
 
-![portfolio-full-screen-mobile](./imagens/portfolio-full-screen-mobile.png)
+![portfolio-full-screen-mobile](./imagens/portfolio-full-screen-mobile02.png)
 
+## 🎯 Atualizações da Nova Versão
 
+Nesta nova versão do meu portfólio, foram implementadas diversas melhorias e recursos:
+
+* **Visual Aprimorado**: O site foi remodelado para refletir mais fielmente o universo de Star Wars, com um design temático que encanta os visitantes.
+* **Efeitos de Áudio**: Agora, ao carregar a página, efeitos de áudio imersivos são reproduzidos, proporcionando uma experiência única e envolvente.
+* **Menu Melhorado**: O menu de navegação foi aprimorado, agora fixo no topo da página para facilitar o acesso às seções.
+* **Menu Mobile Remodelado**: O menu mobile foi redesenhado, e o botão hamburger está funcionando perfeitamente, garantindo uma navegação intuitiva em dispositivos móveis.
+
+### Desafios Enfrentados
+
+Implementar os novos recursos de áudio trouxe desafios interessantes, especialmente na integração com o JavaScript para criar efeitos sonoros que melhoram a experiência do usuário. A implementação desses recursos exigiu atenção especial para garantir que o desempenho do site não fosse comprometido.
 
 ## 🤖 Construído com a Força da IA Generativa!
 
@@ -97,11 +108,11 @@ Ferramentas de **IA Generativa** foram **FUNDAMENTAIS EM DIVERSAS ETAPAS DO PROC
 
 Embora o portfólio esteja pronto para brilhar na galáxia, a jornada de um Padawan nunca termina! Algumas melhorias futuras que pretendo implementar incluem:
 
-*   **Internacionalização (i18n):** Adicionar suporte a outros idiomas (inglês, espanhol) para alcançar um público global.
-*   **Blog Integrado:** Criar um blog para compartilhar artigos e *insights* sobre Data Science, demonstrando meu aprendizado contínuo e expertise.
-*   **Animações e Interações:**  Adicionar animações sutis e interações para tornar a experiência do usuário ainda mais envolvente e dinâmica.
-*   **Otimização de Performance:**  Implementar técnicas de otimização de performance (compressão de imagens, *lazy loading*, etc.) para garantir um carregamento rápido e eficiente do site.
-*   **Acessibilidade (A11y):** Aprimorar a acessibilidade do site, seguindo as WCAG para garantir que seja utilizável por todos os usuários, incluindo pessoas com deficiência.
+*   **Internacionalização (i18n):** Adicionar suporte a outros idiomas (inglês, espanhol) para alcançar um público global e tornar o portfólio mais acessível.
+*   **Blog Integrado:** Criar um blog para compartilhar artigos e *insights* sobre Data Science, demonstrando meu aprendizado contínuo e expertise na área.
+*   **Animações e Interações:**  Adicionar animações sutis e interações para tornar a experiência do usuário ainda mais envolvente e dinâmica, melhorando a interação com o portfólio.
+*   **Otimização de Performance:**  Implementar técnicas de otimização de performance (compressão de imagens, *lazy loading*, etc.) para garantir um carregamento rápido e eficiente do site, proporcionando uma melhor experiência ao usuário.
+*   **Acessibilidade (A11y):** Aprimorar a acessibilidade do site, seguindo as WCAG para garantir que seja utilizável por todos os usuários, incluindo pessoas com deficiência, promovendo inclusão digital.
 
 ## 🌌 Que a Força Esteja Com Você!
 

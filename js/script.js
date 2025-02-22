@@ -1,23 +1,23 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
+// DELETAR todo código de controle de menu
+// Manter apenas o essencial do site
+
+// Controle do Menu Mobile
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
     const mobileNav = document.querySelector('.mobile-nav');
-    const mobileNavLinks = mobileNav.querySelectorAll('a'); // NOVO: Seleciona os links do menu mobile
+    const mobileLinks = document.querySelectorAll('.mobile-nav .nav-button');
 
-    if (hamburgerMenu && mobileNav) {
-        hamburgerMenu.addEventListener('click', function() {
-            mobileNav.classList.toggle('active');
-            document.body.classList.toggle('mobile-menu-open'); // (Opcional, manter)
+    // Toggle do menu
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar em um link
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
         });
-
-        // NOVO: Adiciona event listener para CADA LINK do menu mobile
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileNav.classList.remove('active'); // **FECHA O MENU AO CLICAR NO LINK!**
-                document.body.classList.remove('mobile-menu-open'); // (Opcional, manter)
-            });
-        });
-
-    } else {
-        console.error("Erro: Elementos do menu hambúrguer não encontrados. Verifique as classes 'hamburger-menu' e 'mobile-nav' no HTML.");
-    }
+    });
 });

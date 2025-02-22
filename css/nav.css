@@ -1,0 +1,217 @@
+/* MENU FIXO - VERSÃO DEFINITIVA */
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;  /* Altura do menu ajustada */
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.2);
+}
+
+.nav-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Botões com efeito hover maneiro */
+.nav-button {
+    color: #fff;
+    text-decoration: none;
+    height: 15px;  /* Definindo uma altura menor para os botões */
+    border-radius: 20px;
+    font-size: 0.7rem !important;  /* Reduzido o tamanho da fonte dos botões */
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, transparent 50%, #E87E04 50%);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    padding: 0; /* Removendo o padding para condensar os botões */
+    margin-top: 5px; /* Adicionando margem superior para deslocar os botões para baixo */
+}
+
+.nav-button:hover {
+    background-position: 100% 0%;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 126, 4, 0.3);
+}
+
+/* Responsividade do Menu */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: flex-start;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-button {
+        height: 15px;  /* Mantendo a altura fixa para dispositivos menores */
+        font-size: 0.7rem;
+        margin-top: 5px; /* Mantendo a margem superior para dispositivos menores */
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-links {
+        display: none;
+    }
+
+    /* Botão hamburguer para mobile */
+    .hamburger {
+        display: block;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger span:first-child {
+        top: 0;
+    }
+
+    .hamburger span:nth-child(2) {
+        top: 9px;
+    }
+
+    .hamburger span:last-child {
+        bottom: 0;
+    }
+
+    /* Menu mobile */
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 50px; /* Ajustado para a nova altura do menu */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem 0;
+    }
+
+    .mobile-nav.active {
+        display: block;
+    }
+
+    .mobile-nav .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .mobile-nav .nav-button {
+        width: 80%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+}
+
+/* Botão Hamburguer */
+.hamburger {
+    display: none; /* Esconde por padrão */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #E87E04;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Menu Mobile */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 50px; /* Ajustado para a nova altura do menu */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Esconde menu desktop */
+    }
+
+    .hamburger {
+        display: block; /* Mostra botão hamburguer */
+    }
+
+    /* Animação do hamburguer */
+    .hamburger.active span:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:last-child {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Menu mobile quando ativo */
+    .mobile-nav.active {
+        display: block;
+    }
+
+    .mobile-nav .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .mobile-nav .nav-button {
+        display: block;
+        width: 200px;
+        text-align: center;
+        padding: 1rem;
+        background: transparent;
+        border: 1px solid #E87E04;
+    }
+
+    .mobile-nav .nav-button:hover {
+        background: #E87E04;
+        color: #000;
+    }
+}

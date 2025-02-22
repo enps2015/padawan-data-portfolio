@@ -1,0 +1,152 @@
+/* Cores do Tema Star Wars */
+:root {
+    --lightsaber-blue: #2196f3;
+    --lightsaber-glow: rgba(33, 150, 243, 0.6);
+    --empire-dark: #1a1a1a;
+    --rebel-orange: #ff751a;
+    --jedi-white: #f2f2f2;
+    --force-gradient: linear-gradient(45deg, var(--lightsaber-blue), var(--rebel-orange));
+}
+
+/* Sabre de Luz Loader */
+.lightsaber-loader {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    margin: 20px auto;
+}
+
+.saber-handle {
+    position: absolute;
+    width: 40px;
+    height: 8px;
+    background: #666;
+    border-radius: 4px;
+    left: 0;
+}
+
+.saber-light {
+    position: absolute;
+    width: 160px;
+    height: 4px;
+    background: var(--lightsaber-blue);
+    left: 40px;
+    top: 2px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--lightsaber-glow);
+    animation: ignite 2s ease-out;
+    transform-origin: left;
+}
+
+/* Medidor de Força */
+.force-meter {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.force-level {
+    background: var(--force-gradient);
+    border-radius: 17px;
+    padding: 5px 15px;
+    color: var(--jedi-white);
+    font-size: 0.8em;
+    transition: width 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.force-level::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: lightsaber-shine 2s infinite;
+}
+
+/* Timeline Jedi */
+.jedi-path {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: var(--lightsaber-blue);
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px var(--lightsaber-glow);
+}
+
+/* Animações */
+@keyframes ignite {
+    0% { transform: scaleX(0); opacity: 0; }
+    100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes lightsaber-shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Efeitos Hover nos Cards de Projeto */
+.projeto-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.projeto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--force-gradient);
+    transition: 0.5s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(33, 150, 243, 0.2);
+}
+
+.projeto-card:hover::before {
+    left: 0;
+}
+
+/* Partículas de Estrelas */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1s infinite;
+} 
