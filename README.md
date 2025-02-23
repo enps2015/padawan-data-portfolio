@@ -89,6 +89,16 @@ Nesta nova versão do meu portfólio, foram implementadas diversas melhorias e r
 * **Efeitos de Áudio**: Agora, ao carregar a página, efeitos de áudio imersivos são reproduzidos, proporcionando uma experiência única e envolvente.
 * **Menu Melhorado**: O menu de navegação foi aprimorado, agora fixo no topo da página para facilitar o acesso às seções.
 * **Menu Mobile Remodelado**: O menu mobile foi redesenhado, e o botão hamburger está funcionando perfeitamente, garantindo uma navegação intuitiva em dispositivos móveis.
+* **Novo Botão "Gere Meu CV"**: Implementação de um botão de download do currículo com melhorias de responsividade para telas mobile
+* **Integração com Google Analytics**: Configuração completa de tracking para coletar dados de:
+  - Navegação e cliques
+  - Downloads de arquivos
+  - Tempo de permanência na página
+  - Profundidade de rolagem
+* **Análise de Dados**: Os dados coletados serão utilizados para:
+  - Estudos analíticos sobre comportamento do usuário
+  - Criação de dashboards no Looker Studio
+  - Melhoria contínua da experiência do usuário
 
 ### Desafios Enfrentados
 
@@ -112,9 +122,30 @@ Embora o portfólio esteja pronto para brilhar na galáxia, a jornada de um Pada
 *   **Blog Integrado:** Criar um blog para compartilhar artigos e *insights* sobre Data Science, demonstrando meu aprendizado contínuo e expertise na área.
 *   **Animações e Interações:**  Adicionar animações sutis e interações para tornar a experiência do usuário ainda mais envolvente e dinâmica, melhorando a interação com o portfólio.
 *   **Otimização de Performance:**  Implementar técnicas de otimização de performance (compressão de imagens, *lazy loading*, etc.) para garantir um carregamento rápido e eficiente do site, proporcionando uma melhor experiência ao usuário.
-*   **Acessibilidade (A11y):** Aprimorar a acessibilidade do site, seguindo as WCAG para garantir que seja utilizável por todos os usuários, incluindo pessoas com deficiência, promovendo inclusão digital.
+* **Acessibilidade (A11y):** Aprimorar a acessibilidade do site, seguindo as WCAG para garantir que seja utilizável por todos os usuários, incluindo pessoas com deficiência, promovendo inclusão digital.
+* **Testes de Acessibilidade com Orca:** Implementação de testes de acessibilidade utilizando o Orca, um leitor de tela de código aberto. Isso permite verificar a navegação e a leitura de elementos por usuários com deficiência visual, garantindo que o site seja acessível e funcional para todos.
 
-## 🌌 Que a Força Esteja Com Você!
+## 🌌 Acessibilidade e Inclusão Digital
+
+A acessibilidade é uma prioridade neste projeto. Para garantir que o site seja utilizável por todos, incluindo pessoas com deficiência visual, implementei testes de acessibilidade utilizando o Orca, um leitor de tela de código aberto. Esses testes permitem verificar a navegação e a leitura de elementos, assegurando que o site seja acessível e funcional para todos os usuários.
+
+### Como Testar a Acessibilidade com Orca:
+
+**Para usuários Linux:**
+1. Inicie o Orca no terminal com o comando: `orca &`
+2. Navegue pelo site usando o teclado. O Orca lerá em voz alta os elementos da interface.
+3. Verifique se todos os elementos interativos são anunciados corretamente e se as informações são claras.
+4. Para parar o Orca, pressione `Insert + Q` ou encerre o processo no terminal.
+
+**Para usuários Windows:**
+1. Instale o NVDA (NonVisual Desktop Access), um leitor de tela gratuito e de código aberto, disponível em: https://www.nvaccess.org/
+2. Após a instalação, inicie o NVDA.
+3. Navegue pelo site usando o teclado. O NVDA lerá em voz alta os elementos da interface.
+4. Verifique se todos os elementos interativos são anunciados corretamente e se as informações são claras.
+5. Para parar o NVDA, pressione `Insert + Q`.
+
+Essa funcionalidade foi implementada para promover a inclusão digital e garantir que o site esteja alinhado com as melhores práticas de acessibilidade.
+
 
 Este portfólio representa um passo importante na minha jornada em Data Science. Agradeço a você por explorar minhas "Missões Cumpridas na Galáxia dos Dados"!
 

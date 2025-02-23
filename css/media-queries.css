@@ -74,7 +74,8 @@
     }
 
     .projeto-card h3 {
-        font-size: 1.0em; /* Reduzi o tamanho dos títulos dos cards de projetos */
+        font-size: 0.8em; /* Reduzi o tamanho dos títulos dos cards de projetos */
+        margin-bottom: 8px; /* Adicionado espaçamento para evitar sobreposição */
     }
 
     .hero h1 {
@@ -179,7 +180,9 @@
     }
 
     .projeto-card p {
-        font-size: 0.9em; /* Ajuste o tamanho da fonte para caber no card */
+        font-size: 0.7em; /* Reduzi o tamanho da fonte para evitar sobreposição */
+        line-height: 1.4; /* Melhor espaçamento entre linhas */
+        margin-bottom: 10px; /* Garantir espaço acima do botão */
     }
 }
 

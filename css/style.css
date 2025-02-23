@@ -847,7 +847,8 @@ footer p.desenvolvedor {
 /* Estilo Base para TODOS os Botões do Site */
 .hero-cta,
 .contato-botao,
-.nav-button {
+.nav-button,
+.cv-download-button {
     display: inline-block;
     padding: 10px 25px; /* Altura menor e largura ajustada */
     font-size: 0.9rem;
@@ -868,11 +869,46 @@ footer p.desenvolvedor {
 /* Efeito Hover Padrão */
 .hero-cta:hover,
 .contato-botao:hover,
-.nav-button:hover {
+.nav-button:hover,
+.cv-download-button:hover {
     background-position: 100% 0%;
     color: #000;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(232, 126, 4, 0.3);
+}
+
+/* Container do Botão de Download */
+.cv-download-container {
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .sobre-mim-conteudo-superior {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cv-download-container {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        order: 2; /* Coloca o botão após a foto */
+    }
+    
+    .sobre-mim-direita {
+        order: 1; /* Coloca a foto antes do botão */
+        margin: 0 auto;
+    }
+}
+
+/* Ícone do Botão */
+.cv-download-button i {
+    margin-right: 8px;
 }
 
 /* Ajustes Específicos */

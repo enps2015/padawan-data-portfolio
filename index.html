@@ -52,16 +52,16 @@
 </head>
 <body>
     <!-- PRIMEIRO ELEMENTO DO BODY -->
-    <nav class="fixed-nav">
+    <nav class="fixed-nav" aria-label="Navegação principal">
         <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="#sobre-mim" class="nav-button">Sobre Mim</a></li>
-                <li><a href="#habilidades" class="nav-button">Poderes Jedi</a></li>
-                <li><a href="#projetos" class="nav-button">Missões</a></li>
-                <li><a href="#contato" class="nav-button">Contato</a></li>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#sobre-mim" class="nav-button" role="menuitem">Sobre Mim</a></li>
+                <li role="none"><a href="#habilidades" class="nav-button" role="menuitem">Poderes Jedi</a></li>
+                <li role="none"><a href="#projetos" class="nav-button" role="menuitem">Missões</a></li>
+                <li role="none"><a href="#contato" class="nav-button" role="menuitem">Contato</a></li>
             </ul>
             <!-- Botão Hamburguer -->
-            <button class="hamburger" aria-label="Menu">
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -79,11 +79,11 @@
         </ul>
     </div>
 
-    <header>
+    <header role="banner">
         <div class="hero">
             <h1>Olá! Seja bem-vindo! Que a Força dos Dados Esteja Com Você!</h1>
             <p>Desvendar o poder dos dados é transformar sua carreira com o conhecimento que impulsionará seu futuro.</p>
-            <a href="#sobre-mim" class="hero-cta">Explore Meu Portfólio</a>
+            <a href="#sobre-mim" class="hero-cta" aria-label="Explorar portfólio">Explore Meu Portfólio</a>
             <div class="lightsaber-loader">
                 <div class="saber-handle"></div>
                 <div class="saber-light"></div>
@@ -91,14 +91,19 @@
         </div>
     </header>
 
-    <section id="sobre-mim">
+    <section id="sobre-mim" aria-labelledby="sobre-mim-heading">
         <div class="container">
-            <h2>Sobre Mim - A Jornada rumo à Data Science</h2>
+            <h2 id="sobre-mim-heading">Sobre Mim - A Jornada rumo à Data Science</h2>
 
             <div class="sobre-mim-conteudo-superior">
                 <div class="sobre-mim-direita">  <!-- DIV DA FOTO - MOVIDA PARA CIMA -->
                     <div class="foto-circular-container">
                         <img src="imagens/perfil-imagem.jpeg" alt="Foto de Eric Pimentel, Engenheiro Eletricista e Data Scientist" class="perfil-foto">
+                    </div>
+                    <div class="cv-download-container">
+                        <a href="docs/CV-eric-pimentel.pdf" download class="cv-download-button">
+                            <i class="fas fa-download"></i> Gere meu CV
+                        </a>
                     </div>
                 </div>
 
@@ -133,8 +138,8 @@
                 </div>
             </div>
     
-            <div class="sobre-mim-habilidades" id="habilidades">
-                <h3>Habilidades</h3>
+            <div class="sobre-mim-habilidades" id="habilidades" aria-labelledby="habilidades-heading">
+                <h3 id="habilidades-heading">Habilidades</h3>
                 <ul class="lista-habilidades">
                     <li>
                         <span class="nome-habilidade">
@@ -285,9 +290,9 @@
         </div>
     </section>
 
-    <section id="projetos">
+    <section id="projetos" aria-labelledby="projetos-heading">
         <div class="container">
-            <h2>Missões Cumpridas na Galáxia dos Dados (Projetos)</h2>
+            <h2 id="projetos-heading">Missões Cumpridas na Galáxia dos Dados (Projetos)</h2>
             <p class="projetos-descricao">Aqui você encontrará alguns dos projetos que desenvolvi em Data Science. Cada projeto representa um passo na minha jornada de aprendizado e demonstração prática das minhas habilidades.</p>
 
             <div class="projetos-grid">
@@ -346,9 +351,9 @@
         </div>
     </section>
 
-    <footer id="contato">
+    <footer id="contato" aria-labelledby="contato-heading">
         <div class="container">
-            <h2>Entre em Contato Comigo - "Que a Força Esteja Com Você!"</h2>
+            <h2 id="contato-heading">Entre em Contato Comigo - "Que a Força Esteja Com Você!"</h2>
             <p class="yoda-quote">"Sempre em movimento está o futuro. Em dados, a resposta encontrar você deve." - Mestre Yoda</p>
     
             <div class="contato-info">
@@ -371,6 +376,51 @@
     <script src="js/script.js"></script>
     <script src="js/star-wars-effects.js"></script>
     <script src="js/sound-effects.js"></script>
+    <script>
+    // Função para enviar eventos ao Google Analytics
+    function trackEvent(category, action, label) {
+        gtag('event', action, {
+            'event_category': category,
+            'event_label': label
+        });
+    }
+
+    // Track Clicks
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            trackEvent('Navigation', 'Click', this.href);
+        });
+    });
+
+    // Track Downloads
+    document.querySelectorAll('[download]').forEach(link => {
+        link.addEventListener('click', function() {
+            trackEvent('Download', 'Click', this.href);
+        });
+    });
+
+    // Track Form Interactions
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function() {
+            trackEvent('Form', 'Submit', this.id || 'unknown');
+        });
+    });
+
+    // Track Time on Page
+    let startTime = Date.now();
+    window.addEventListener('beforeunload', function() {
+        let timeSpent = Math.round((Date.now() - startTime) / 1000);
+        trackEvent('Engagement', 'Time Spent', `${timeSpent} seconds`);
+    });
+
+    // Track Scroll Depth
+    window.addEventListener('scroll', function() {
+        let scrollDepth = Math.round((window.scrollY / document.body.scrollHeight) * 100);
+        if (scrollDepth % 25 === 0) {
+            trackEvent('Engagement', 'Scroll Depth', `${scrollDepth}%`);
+        }
+    });
+    </script>
 
 </body>
 </html>
