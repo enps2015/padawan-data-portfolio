@@ -63,7 +63,7 @@ A jornada de construção responsiva deste portfólio foi **repleta de desafios*
 
 Os principais desafios e soluções foram:
 
-*   **Responsividade do Menu:**  O menu horizontal inicial, elegante para desktop, **tornou-se um verdadeiro Lord Sith em telas mobile!** Ocupando espaço excessivo e prejudicando a navegação. **Solução:** A **IMPLEMENTAÇÃO DO MENU HAMBÚRGUER**, com sua simplicidade e eficácia, **RESTAUROU O EQUILÍBRIO NA FORÇA!**  Utilizamos HTML, CSS e JavaScript para criar um menu hambúrguer **totalmente funcional e adaptado para mobile**, garantindo uma navegação **INTUITIVA E OTIMIZADA** em qualquer dispositivo.
+*   **Responsividade do Menu:**  O menu horizontal inicial, elegante para desktop, **tornou-se um verdadeiro Lord Sith em telas mobile!** Oportunidade excessivo e prejudicando a navegação. **Solução:** A **IMPLEMENTAÇÃO DO MENU HAMBÚRGUER**, com sua simplicidade e eficácia, **RESTAUROU O EQUILÍBRIO NA FORÇA!**  Utilizamos HTML, CSS e JavaScript para criar um menu hambúrguer **totalmente funcional e adaptado para mobile**, garantindo uma navegação **INTUITIVA E OTIMIZADA** em qualquer dispositivo.
 
 *   **Design Temático Consistente:**  Manter a consistência visual do tema Star Wars em todas as seções e dispositivos, **sem cair no "lado sombrio" da poluição visual**, foi um desafio constante. **Solução:**  A **UTILIZAÇÃO DE UMA PALETA DE CORES COESA**, tipografia adequada e elementos visuais sutis inspirados na saga, **GUIARAM-NOS PARA A LUZ!**  Garantimos um **design temático elegante e profissional**, evocando o universo Star Wars de forma **SUTIL E IMPACTANTE.**
 
@@ -73,13 +73,37 @@ Os principais desafios e soluções foram:
 
 Para apreciar a **beleza e o profissionalismo** deste portfólio em sua totalidade, confira as capturas de tela **Full-Screen** em diferentes dispositivos:
 
-**🖥️ Tela Desktop Full-Screen:**
+<div style="width: 100%; height: 800px; margin: 20px auto; border: 2px solid #444; border-radius: 8px; overflow: auto; position: relative;">
+  <div class="scroll-hint">Role para ver mais →</div>
+  <div style="display: flex; width: max-content;">
+    <img src="./imagens/portfolio-full-screen03.png" alt="Tela Desktop" style="max-width: 100%; height: auto; object-fit: contain;">
+  </div>
+</div>
 
-![portfolio-full-screen](./imagens/portfolio-full-screen02.png)
-
-**📱 Tela Mobile Full-Screen:**
-
-![portfolio-full-screen-mobile](./imagens/portfolio-full-screen-mobile02.png)
+<style>
+  @media (max-width: 850px) {
+    div[style*="width: 100%"] {
+      width: 100%;
+      height: 800px;
+    }
+    div[style*="width: 100%"] img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  .scroll-hint {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    z-index: 1;
+  }
+</style>
 
 ## 🎯 Atualizações da Nova Versão
 
@@ -110,7 +134,7 @@ Implementar os novos recursos de áudio trouxe desafios interessantes, especialm
 
 Ferramentas de **IA Generativa** foram **FUNDAMENTAIS EM DIVERSAS ETAPAS DO PROCESSO**, desde a **GERAÇÃO DE IDEIAS DE DESIGN E LAYOUT**, passando pela **OTIMIZAÇÃO DO CÓDIGO FRONTEND (HTML, CSS, JavaScript)**, até a **CRIAÇÃO DE TEXTOS PERSUASIVOS E OTIMIZADOS PARA SEO!**
 
-**A IA Generativa AGIU COMO UM VERDADEIRO "PADAWAN AUXILIAR"**, acelerando o desenvolvimento, sugerindo soluções criativas e permitindo que eu **FOQUE EM APRIMORAR A EXPERIÊNCIA DO USUÁRIO E A QUALIDADE GERAL DO PORTFÓLIO!**
+**A IA Generativa AGIU COMO UM VERDADEIRO "PADAWAN AUXILIAR"**, acelerando o desenvolvimento, sugerindo soluções criativas e permitindo que eu **FOQUE EM APRIMORAR A EXPERIÊNCIA DO USUÁRIO E A QUALIDEA GERAL DO PORTFÓLIO!**
 
 **ESTE PROJETO É UM TESTEMUNHO DO PODER DA COLABORAÇÃO HUMANO-IA NO DESENVOLVIMENTO WEB MODERNO!** 🤝🤖
 
@@ -119,7 +143,7 @@ Ferramentas de **IA Generativa** foram **FUNDAMENTAIS EM DIVERSAS ETAPAS DO PROC
 Embora o portfólio esteja pronto para brilhar na galáxia, a jornada de um Padawan nunca termina! Algumas melhorias futuras que pretendo implementar incluem:
 
 *   **Internacionalização (i18n):** Adicionar suporte a outros idiomas (inglês, espanhol) para alcançar um público global e tornar o portfólio mais acessível.
-*   **Blog Integrado:** Criar um blog para compartilhar artigos e *insights* sobre Data Science, demonstrando meu aprendizado contínuo e expertise na área.
+*   **Blog Integrado:** Criar a blog para compartilhar artigos e *insights* sobre Data Science, demonstrando meu aprendizado contínuo e expertise na área.
 *   **Animações e Interações:**  Adicionar animações sutis e interações para tornar a experiência do usuário ainda mais envolvente e dinâmica, melhorando a interação com o portfólio.
 *   **Otimização de Performance:**  Implementar técnicas de otimização de performance (compressão de imagens, *lazy loading*, etc.) para garantir um carregamento rápido e eficiente do site, proporcionando uma melhor experiência ao usuário.
 * **Acessibilidade (A11y):** Aprimorar a acessibilidade do site, seguindo as WCAG para garantir que seja utilizável por todos os usuários, incluindo pessoas com deficiência, promovendo inclusão digital.
