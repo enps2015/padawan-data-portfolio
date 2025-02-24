@@ -123,6 +123,7 @@ Nesta nova versão do meu portfólio, foram implementadas diversas melhorias e r
   - Estudos analíticos sobre comportamento do usuário
   - Criação de dashboards no Looker Studio
   - Melhoria contínua da experiência do usuário
+* **Botão de Acessibilidade**: Implementação de um novo botão de acessibilidade informando aos usuários que o site está adequado aos padrões de acessibilidade, garantindo assim uma melhor inclusão digital.
 
 ### Desafios Enfrentados
 

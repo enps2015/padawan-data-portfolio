@@ -422,6 +422,26 @@
     });
     </script>
 
+    <div id="accessibility-button" class="accessibility-button" aria-label="Acessibilidade" tabindex="0">
+        <i class="fas fa-universal-access" aria-hidden="true"></i>
+    </div>
+
+    <div id="accessibility-popup" class="accessibility-popup" role="dialog" aria-labelledby="accessibility-heading" aria-hidden="true">
+        <div class="accessibility-popup-content">
+            <h2 id="accessibility-heading">Declaração de Acessibilidade</h2>
+            <p>Este portfólio foi desenvolvido em conformidade com as diretrizes de acessibilidade web (WCAG) para garantir uma experiência inclusiva para todos os usuários. As seguintes funcionalidades de acessibilidade foram implementadas:</p>
+            <ul>
+                <li>O site pode ser totalmente navegado utilizando apenas o teclado, sem a necessidade de mouse.</li>
+                <li>Compatibilidade com Tecnologias Assistivas: O conteúdo é semanticamente estruturado e compatível com leitores de tela e outras tecnologias assistivas.</li>
+                <li>Contraste de Cores Otimizado: O design utiliza uma paleta de cores com alto contraste para garantir a legibilidade para usuários com baixa visão.</li>
+                <li>Textos Alternativos Abrangentes: Todas as imagens relevantes possuem textos alternativos descritivos para garantir a compreensão do conteúdo por leitores de tela.</li>
+                <li>HTML Semântico e Estruturado: A estrutura HTML segue os princípios de semântica e organização para facilitar a navegação e a interpretação do conteúdo por tecnologias assistivas.</li>
+            </ul>
+            <p>Estamos comprometidos com a acessibilidade contínua deste portfólio. Caso encontre barreiras de acessibilidade ou tenha sugestões de melhoria, por favor, entre em contato para que possamos aprimorar ainda mais a experiência de todos os usuários. Agradecemos seu feedback.</p>
+            <button id="close-accessibility-popup" class="close-popup" aria-label="Fechar" tabindex="0">&times;</button>
+        </div>
+    </div>
+
 </body>
 </html>
 

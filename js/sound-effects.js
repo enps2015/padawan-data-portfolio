@@ -18,7 +18,7 @@ class StarWarsAudio {
 
     createSoundControl() {
         const soundButton = document.createElement('button');
-        soundButton.className = 'sound-control';
+        soundButton.className = 'sound-control star-wars-button';
         soundButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
         document.body.appendChild(soundButton);
 
@@ -80,82 +80,7 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Inicialização
-document.addEventListener('DOMContentLoaded', () => {
-    const audio = new StarWarsAudio();
-    
-    // Adiciona listener para primeiro clique/toque do usuário
-    document.addEventListener('click', () => {
-        audio.playIntro();
-    }, { once: true });
-
-    // Iniciar o áudio ativado
-    audio.imperialMarch.play();
-    document.querySelector('.sound-control i').className = 'fas fa-volume-up';
-});
-
-// Criar elemento de áudio
-const imperialMarch = new Audio('audio/imperial-march.mp3');
-const audioToggle = document.getElementById('audioToggle');
-const volumeControl = document.getElementById('volumeControl');
-let isPlaying = false;
-
-// Configurações iniciais
-imperialMarch.loop = true;
-imperialMarch.volume = 0.5; // Volume inicial
-
-// Função para fade in do áudio
-function fadeIn(audio, duration = 3000) {
-    audio.volume = 0;
-    audio.play();
-    
-    const interval = 50;
-    const steps = duration / interval;
-    const volumeStep = volumeControl.value / 100 / steps;
-    
-    let currentStep = 0;
-    
-    const fadeInterval = setInterval(() => {
-        currentStep++;
-        audio.volume = Math.min(volumeStep * currentStep, volumeControl.value / 100);
-        
-        if (currentStep >= steps) {
-            clearInterval(fadeInterval);
-        }
-    }, interval);
-}
-
-// Iniciar música quando a página carregar
 window.addEventListener('load', () => {
-    // Pequeno delay antes de iniciar
-    setTimeout(() => {
-        fadeIn(imperialMarch);
-        isPlaying = true;
-        audioToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-    }, 1000);
-});
-
-// Toggle play/pause
-audioToggle.addEventListener('click', () => {
-    if (isPlaying) {
-        imperialMarch.pause();
-        audioToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
-    } else {
-        imperialMarch.play();
-        audioToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-    }
-    isPlaying = !isPlaying;
-});
-
-// Controle de volume
-volumeControl.addEventListener('input', () => {
-    imperialMarch.volume = volumeControl.value / 100;
-});
-
-// Pausar áudio quando o usuário sair da página
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        imperialMarch.pause();
-        isPlaying = false;
-        audioToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
-    }
+    const audio = new StarWarsAudio();
+    audio.playIntro();
 });

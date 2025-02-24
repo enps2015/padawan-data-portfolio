@@ -311,7 +311,6 @@ header::before {
 
 .icone-habilidade {
     color: #2196f3;
-    font-size: 1.1rem;
 }
 
 /* Barra de Progresso com níveis */
@@ -549,6 +548,9 @@ header::before {
     -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    /* Adicionando propriedades padrão para compatibilidade */
+    line-clamp: 7;
+    -webkit-line-clamp: 7;
 }
 
 /* Botão SEMPRE na base do card e centralizado */
@@ -1129,4 +1131,126 @@ footer {
     background: #E87E04;
     border-radius: 50%;
     cursor: pointer;
+}
+
+/* Estilo do Botão de Acessibilidade */
+.accessibility-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+.accessibility-button:hover {
+    background-color: #1e88e5;
+}
+
+/* Estilo do Popup de Acessibilidade */
+.accessibility-popup {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 90%;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+}
+.accessibility-popup-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+.accessibility-popup h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.accessibility-popup p, .accessibility-popup ul {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+.accessibility-popup ul {
+    padding-left: 20px;
+}
+.accessibility-popup ul li {
+    margin-bottom: 10px;
+}
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.close-popup:hover {
+    color: #f00;
+}
+
+/* Adicionando propriedades padrão para compatibilidade */
+appearance: none;
+-webkit-appearance: none;
+
+/* Estilo do Botão de Acessibilidade e Controle de Áudio com tema Star Wars */
+.star-wars-button {
+    background: linear-gradient(90deg, transparent 50%, #E87E04 50%);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    border: 1px solid #E87E04;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.star-wars-button:hover {
+    background-position: 100% 0%;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 126, 4, 0.3);
+}
+
+/* Aplicando o estilo Star Wars aos botões de acessibilidade e controle de áudio */
+.accessibility-button {
+    bottom: 20px;
+    left: 20px;
+}
+.accessibility-button i {
+    font-size: 1.5em;
+}
+
+.audio-control {
+    bottom: 20px;
+    right: 20px;
+    padding: 0;
+}
+.audio-button {
+    font-size: 1.5em;
+}
+
+/* Removendo estilos antigos */
+.accessibility-button,
+.audio-control {
+    background: none;
+    border: none;
+    box-shadow: none;
 }
