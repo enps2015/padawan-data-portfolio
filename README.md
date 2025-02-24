@@ -76,7 +76,7 @@ Para apreciar a **beleza e o profissionalismo** deste portfólio em sua totalida
 <div style="width: 100%; height: 800px; margin: 20px auto; border: 2px solid #444; border-radius: 8px; overflow: auto; position: relative;">
   <div class="scroll-hint">Role para ver mais →</div>
   <div style="display: flex; width: max-content;">
-    <img src="./imagens/portfolio-full-screen03.png" alt="Tela Desktop" style="max-width: 100%; height: auto; object-fit: contain;">
+    <img src="./imagens/portfolio-full-screen04.png" alt="Tela Desktop" style="max-width: 100%; height: auto; object-fit: contain;">
   </div>
 </div>
 
