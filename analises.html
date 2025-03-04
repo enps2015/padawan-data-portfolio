@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análises e Demonstrações - Eric Pimentel</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="css/star-wars.css">
+    <meta name="description" content="Análises de dados e demonstrações interativas de Eric Pimentel - Explorando insights através de visualizações">
+    <meta name="keywords" content="análise de dados, visualização, chart.js, interativo, data science, saneamento básico, SNIS">
+    <meta name="author" content="Eric Pimentel">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QF4P4HKZVD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-QF4P4HKZVD');
+    </script>
+    
+    <style>
+        /* Estilos específicos para a página de análises */
+        .analises-header {
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+            background-image: url('imagens/header-page-analises.png');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .analises-header .hero {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .analises-header h1 {
+            color: #E87E04;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px rgba(232, 126, 4, 0.5);
+            margin-bottom: 0.5rem;
+        }
+        
+        .analises-header p {
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .analise-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(33, 150, 243, 0.3);
+        }
+        
+        .analise-section:nth-child(odd) {
+            background-color: #1a1a1a;
+        }
+        
+        .analise-section:nth-child(even) {
+            background-color: #0c1a2a;
+        }
+        
+        .analise-section h2 {
+            color: #E87E04;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 5px rgba(232, 126, 4, 0.3);
+        }
+        
+        .analise-introducao {
+            color: #f0f0f0;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            max-width: 900px;
+        }
+        
+        .canvas-container {
+            width: 100%;
+            height: 400px;
+            margin: 2rem auto;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .insights-container {
+            background-color: rgba(33, 150, 243, 0.1);
+            border-left: 4px solid #2196F3;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .insights-container h3 {
+            color: #2196F3;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .insights-container ul {
+            color: #f0f0f0;
+            padding-left: 1.5rem;
+        }
+        
+        .insights-container li {
+            margin-bottom: 0.7rem;
+            line-height: 1.5;
+        }
+        
+        .navegacao-analises {
+            position: sticky;
+            top: 45px;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            padding: 1rem 0;
+            z-index: 100;
+            border-bottom: 1px solid #2196F3;
+        }
+        
+        .navegacao-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navegacao-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            background-color: rgba(33, 150, 243, 0.2);
+        }
+        
+        .navegacao-links a:hover {
+            background-color: rgba(33, 150, 243, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .navegacao-links a.active {
+            background-color: #2196F3;
+            color: #fff;
+        }
+        
+        .botao-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #2196F3;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 50; /* Aumentado para garantir que fique à frente */
+        }
+        
+        .botao-voltar:hover {
+            background-color: #0d8bf2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+        }
+        
+        .dataset-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(33, 150, 243, 0.2);
+            color: #2196F3;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .dataset-link:hover {
+            background-color: rgba(33, 150, 243, 0.3);
+            color: #fff;
+        }
+        
+        .voltar-topo {
+            position: fixed;
+            bottom: 100px; /* Movendo 100% do seu tamanho para cima (50px original + 50px) */
+            right: calc(30px + 15%); /* Deslocando 15% para a direita */
+            background-color: #2196F3;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+        
+        .voltar-topo.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .voltar-topo:hover {
+            background-color: #0d8bf2;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+        }
+        
+        /* Estilos para seções de projeto */
+        .projeto-section {
+            padding: 3rem 0;
+            background-color: #0c1a2a;
+            border-bottom: 1px solid rgba(33, 150, 243, 0.3);
+        }
+        
+        .projeto-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .projeto-imagem {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+        
+        .projeto-titulo h2 {
+            color: #E87E04;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 5px rgba(232, 126, 4, 0.3);
+        }
+        
+        .projeto-subtitulo {
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .projeto-introducao {
+            color: #f0f0f0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            background-color: rgba(33, 150, 243, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .analise-titulo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .analise-titulo i {
+            color: #E87E04;
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .analise-titulo h2 {
+            color: #E87E04;
+            font-size: 2rem;
+            margin: 0;
+            text-shadow: 0 0 5px rgba(232, 126, 4, 0.3);
+        }
+        
+        /* Estilos para insights aprimorados */
+        .insights-container {
+            background-color: rgba(33, 150, 243, 0.1);
+            border-left: 4px solid #2196F3;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .insights-container h3 {
+            color: #2196F3;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .insights-container h3 i {
+            margin-right: 0.7rem;
+        }
+        
+        .insights-destaque {
+            color: #E87E04;
+            font-weight: bold;
+        }
+        
+        .insights-container ul {
+            color: #f0f0f0;
+            padding-left: 1.5rem;
+        }
+        
+        .insights-container li {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .insights-nota {
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Estilos para conclusão */
+        .conclusao-destaque {
+            background-color: rgba(232, 126, 4, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .conclusao-destaque p {
+            font-weight: bold;
+            color: #E87E04;
+            margin-bottom: 1rem;
+        }
+        
+        .conclusao-destaque ol {
+            padding-left: 1.5rem;
+        }
+        
+        .conclusao-destaque li {
+            margin-bottom: 0.7rem;
+            color: #f0f0f0;
+        }
+        
+        .motivacional {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            color: #E87E04;
+        }
+        
+        /* Fix para o ícone fa-faucet-drip que pode não existir em versões mais antigas do Font Awesome */
+        .fa-faucet-drip::before {
+            content: "\f71e"; /* código para fa-tint-slash como alternativa */
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .canvas-container {
+                height: 300px;
+            }
+            
+            .navegacao-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .navegacao-links a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .analises-header h1 {
+                font-size: 2rem;
+            }
+            
+            .analise-section h2 {
+                font-size: 1.7rem;
+            }
+            
+            .projeto-header {
+                padding: 0 1rem;
+            }
+            
+            .projeto-titulo h2 {
+                font-size: 1.8rem;
+            }
+            
+            .analise-titulo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .analise-titulo i {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        /* Garantindo que o rodapé também não fique escondido */
+        footer {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .voltar-container {
+            position: relative;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de Navegação Fixo -->
+    <nav class="fixed-nav" aria-label="Navegação principal">
+        <div class="nav-container">
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="index.html#sobre-mim" class="nav-button" role="menuitem">Sobre Mim</a></li>
+                <li role="none"><a href="index.html#habilidades" class="nav-button" role="menuitem">Poderes Jedi</a></li>
+                <li role="none"><a href="index.html#projetos" class="nav-button" role="menuitem">Missões</a></li>
+                <li role="none"><a href="index.html#contato" class="nav-button" role="menuitem">Contato</a></li>
+                <li role="none"><a href="analises.html" class="nav-button" role="menuitem">Análises e Demonstrações</a></li>
+            </ul>
+            <!-- Botão Hamburguer -->
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="index.html#sobre-mim" class="nav-button">Sobre Mim</a></li>
+            <li><a href="index.html#habilidades" class="nav-button">Poderes Jedi</a></li>
+            <li><a href="index.html#projetos" class="nav-button">Missões</a></li>
+            <li><a href="index.html#contato" class="nav-button">Contato</a></li>
+            <li><a href="analises.html" class="nav-button">Análises e Demonstrações</a></li>
+        </ul>
+    </div>
+
+    <header class="analises-header" role="banner">
+        <div class="hero">
+            <h1>Análises e Demonstrações de Dados</h1>
+            <p>Explorando o Universo dos Dados com a Força da Análise</p>
+            <div class="lightsaber-loader">
+                <div class="saber-handle"></div>
+                <div class="saber-light"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação interna da página -->
+    <nav class="navegacao-analises" aria-label="Navegação entre análises">
+        <ul class="navegacao-links">
+            <li><a href="#introducao" class="nav-link">Introdução</a></li>
+            <li><a href="#evolucao-atendimento" class="nav-link">Evolução do Atendimento</a></li>
+            <li><a href="#atendimento-por-estado" class="nav-link">Atendimento por Estado</a></li>
+            <li><a href="#investimento" class="nav-link">Investimento</a></li>
+            <li><a href="#consumo-agua" class="nav-link">Consumo de Água</a></li>
+            <li><a href="#perdas-agua" class="nav-link">Perdas de Água</a></li>
+        </ul>
+    </nav>
+
+    <section id="introducao" class="analise-section" aria-labelledby="introducao-heading">
+        <div class="container">
+            <div class="analise-titulo">
+                <i class="fas fa-rocket"></i>
+                <h2 id="introducao-heading">Explorando o Universo dos Dados</h2>
+            </div>
+            <div class="analise-introducao">
+                <p>Mergulhe no fascinante universo da análise de dados e explore insights poderosos sobre os mais diversos assuntos!</p> 
+                <p>Esta página é dedicada a projetos paralelos de análises que realizo diretamente no meu site portfólio, complementando os 
+                    trabalhos disponíveis no meu <a href="https://github.com/enps2015" target="_blank">GitHub</a>. Aqui, você encontrará 
+                    visualizações interativas, dashboards e insights gerados a partir de dados reais, com o objetivo de transformar 
+                    números em conhecimento e inspirar ações positivas. Prepare-se para embarcar em uma jornada de descobertas, guiado 
+                    pela Força dos Dados!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projeto-snis" class="projeto-section">
+        <div class="container">
+            <div class="projeto-header">
+                <img src="imagens/header-analises-SNIS.png" alt="Saneamento Básico no Brasil" class="projeto-imagem">
+                <div class="projeto-titulo">
+                    <h2>Saneamento Básico no Brasil: Uma Jornada de 27 Anos (1995-2022)</h2>
+                    <p class="projeto-subtitulo">Uma análise completa da abrangência dos serviços de água e esgoto nos municípios brasileiros, desde a criação do SNIS até os dias atuais.</p>
+                </div>
+            </div>
+            
+            <div class="projeto-introducao">
+                <p>O saneamento básico é um direito humano fundamental e essencial para a saúde, o bem-estar e o desenvolvimento socioeconômico de uma população. No entanto, milhões de pessoas no Brasil ainda não têm acesso a serviços adequados de água e esgoto.</p>
+                
+                <p>Criado em 1996, o Sistema Nacional de Informações sobre Saneamento (SNIS) é uma unidade vinculada à Secretaria Nacional de Saneamento (SNS) do Ministério do Desenvolvimento Regional (MDR). Com abrangência nacional, reúne informações relevantes sobre os serviços de água e esgoto em áreas urbanas, permitindo um acompanhamento detalhado da situação do saneamento básico no Brasil. Este conjunto de dados oferece um panorama abrangente do setor, permitindo análises aprofundadas e a identificação de tendências cruciais para o desenvolvimento de políticas públicas eficazes.</p>
+                
+                <p>A partir de 1995, o SNIS coleta e disponibiliza dados dos municípios e prestadores de serviços, abrangendo informações institucionais, administrativas, operacionais, gerenciais, econômico-financeiras, contábeis e de qualidade. O SNIS tem como objetivos o planejamento e execução de políticas públicas, a orientação na aplicação de recursos, o conhecimento e avaliação do setor, a avaliação do desempenho dos serviços, o aperfeiçoamento da gestão, a orientação de atividades regulatórias e de fiscalização, e o exercício do controle social.</p>
+                
+                <p>Anualmente, o SNIS disponibiliza à sociedade diagnósticos sobre água, esgoto, manejo de resíduos sólidos urbanos, drenagem e manejo de águas pluviais urbanas. Desde 2019, o SNIS também oferece um Painel de Informações que permite o acesso interativo a informações e indicadores relevantes do setor.</p>
+            </div>
+            
+            <!-- Seção Evolução do Atendimento -->
+            <section id="evolucao-atendimento" class="analise-section">
+                <div class="container">
+                    <div class="analise-titulo">
+                        <i class="fas fa-chart-line"></i>
+                        <h2 id="evolucao-heading">Evolução do Atendimento com Água e Esgoto</h2>
+                    </div>
+                    <div class="analise-introducao">
+                        <p>O acesso à água tratada e ao esgotamento sanitário são indicadores fundamentais da qualidade de vida e do desenvolvimento de uma população. Nesta análise, exploramos como evoluiu o atendimento com água e esgoto no Brasil ao longo dos anos, observando tendências e identificando desafios para a universalização desses serviços.</p>
+                        <a href="https://drive.google.com/file/d/16Kv2LsoiHqvFfbd7No1uLFNiRkwhDb9U/view?usp=sharing" target="_blank" class="dataset-link">
+                            <i class="fas fa-database"></i> Acessar dataset completo
+                        </a>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="graficoEvolucaoAtendimento"></canvas>
+                    </div>
+                    <div class="insights-container">
+                        <h3><i class="fas fa-lightbulb"></i> Insights Principais</h3>
+                        <ul>
+                            <li>O atendimento com água tratada demonstra <span class="insights-destaque">crescimento constante</span> ao longo dos anos, passando de cerca de 150 milhões de habitantes em 2010 para aproximadamente 185 milhões em 2021, representando um aumento de 23% na cobertura do serviço.</li>
+                            <li>O atendimento com esgotamento sanitário apresentou um <span class="insights-destaque">crescimento ainda mais expressivo</span>, aumentando de 85 milhões para 125 milhões de pessoas atendidas no mesmo período, um incremento de 47%. Apesar deste avanço significativo, o serviço ainda não alcança cerca de 60 milhões de brasileiros que têm acesso à água tratada.</li>
+                            <li>A <span class="insights-destaque">diferença persistente</span> entre o atendimento com água e esgoto (aproximadamente 60 milhões de pessoas) evidencia o "hiato de saneamento" que ainda caracteriza o setor no Brasil, demandando investimentos prioritários em redes de coleta e tratamento de esgoto.</li>
+                        </ul>
+                        <p class="insights-nota">Nota: O crescimento constante observado nos dados é resultado de políticas públicas implementadas ao longo desses anos, como o PAC (Programa de Aceleração do Crescimento) e, mais recentemente, o Novo Marco Legal do Saneamento (2020), que ampliou a participação do setor privado nos serviços.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção Atendimento por Estado -->
+            <section id="atendimento-por-estado" class="analise-section">
+                <div class="container">
+                    <div class="analise-titulo">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h2 id="estados-heading">Atendimento com Água e Esgoto por Estado (2022)</h2>
+                    </div>
+                    <div class="analise-introducao">
+                        <p>O Brasil apresenta grandes desigualdades regionais no acesso ao saneamento básico. Esta análise compara o atendimento com água e esgoto entre os estados brasileiros, permitindo identificar aqueles com maior ou menor cobertura desses serviços essenciais.</p>
+                        <a href="https://drive.google.com/file/d/1yj_iaHc_6xxGndoC8dh1Bc3soBJz-SwR/view?usp=sharing" target="_blank" class="dataset-link">
+                            <i class="fas fa-database"></i> Acessar dataset completo
+                        </a>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="graficoAtendimentoPorEstado"></canvas>
+                    </div>
+                    <div class="insights-container">
+                        <h3><i class="fas fa-lightbulb"></i> Insights Principais</h3>
+                        <ul>
+                            <li>Os estados das regiões Sul e Sudeste, como <span class="insights-destaque">São Paulo, Rio de Janeiro e Minas Gerais</span>, lideram o ranking de atendimento com água e esgoto, refletindo a maior concentração de investimentos históricos nestas regiões mais desenvolvidas economicamente.</li>
+                            <li>Estados da região Norte, como <span class="insights-destaque">Pará, Amazonas e Acre</span>, apresentam os menores índices de atendimento, especialmente em esgotamento sanitário, onde alguns estados não chegam a atender 20% da população. Fatores como a grande extensão territorial, baixa densidade populacional e limitações orçamentárias contribuem para este cenário.</li>
+                            <li>A <span class="insights-destaque">disparidade entre água e esgoto</span> se mantém em praticamente todos os estados, mas é ainda mais acentuada nas regiões Norte e Nordeste, onde a diferença entre os serviços pode superar 60 pontos percentuais.</li>
+                        </ul>
+                        <p class="insights-nota">Importante: As desigualdades regionais observadas são reflexo de décadas de investimentos desiguais e apontam para a necessidade de políticas públicas focalizadas nas regiões mais carentes, com priorização de recursos federais e incentivos para parcerias público-privadas em áreas menos atrativas economicamente.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção Investimento -->
+            <section id="investimento" class="analise-section">
+                <div class="container">
+                    <div class="analise-titulo">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h2 id="investimento-heading">Investimento em Saneamento Básico por Ano</h2>
+                    </div>
+                    <div class="analise-introducao">
+                        <p>Os investimentos em saneamento básico são essenciais para a expansão e melhoria dos serviços de água e esgoto. Esta análise apresenta a evolução dos investimentos no setor ao longo dos anos, permitindo avaliar o compromisso público e privado com a universalização do saneamento.</p>
+                        <a href="https://drive.google.com/file/d/1PdGQxyY01Nmpy8wYFNHImSxgQ8KsmhJQ/view?usp=sharing" target="_blank" class="dataset-link">
+                            <i class="fas fa-database"></i> Acessar dataset completo
+                        </a>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="graficoInvestimento"></canvas>
+                    </div>
+                    <div class="insights-container">
+                        <h3><i class="fas fa-lightbulb"></i> Insights Principais</h3>
+                        <ul>
+                            <li>Os investimentos em saneamento básico apresentaram <span class="insights-destaque">oscilações significativas</span> entre 2010 e 2021, com tendência geral de crescimento, passando de aproximadamente R$ 9 bilhões para R$ 17 bilhões anuais.</li>
+                            <li>Períodos de <span class="insights-destaque">retração nos investimentos</span>, como entre 2014-2016, coincidem com momentos de crise econômica no país, demonstrando como o setor é sensível a flutuações macroeconômicas e ajustes fiscais.</li>
+                            <li>A <span class="insights-destaque">eficiência na aplicação dos recursos</span> é questionável quando comparamos o aumento dos investimentos com a evolução da cobertura dos serviços. Em alguns períodos, mesmo com investimentos crescentes, os avanços na universalização foram modestos, indicando possíveis ineficiências ou desafios na execução dos projetos.</li>
+                        </ul>
+                        <p class="insights-nota">Análise complementar: O Novo Marco Legal do Saneamento (Lei nº 14.026/2020) busca atrair mais investimentos privados para o setor. Estima-se que serão necessários aproximadamente R$ 500-700 bilhões até 2033 para universalizar os serviços de água e esgoto no país, meta estabelecida pela própria legislação.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção Consumo de Água -->
+            <section id="consumo-agua" class="analise-section">
+                <div class="container">
+                    <div class="analise-titulo">
+                        <i class="fas fa-tint"></i>
+                        <h2 id="consumo-heading">Consumo Médio de Água por Habitante por Estado (2022)</h2>
+                    </div>
+                    <div class="analise-introducao">
+                        <p>O consumo de água varia consideravelmente entre as diferentes regiões do Brasil, refletindo diferenças climáticas, culturais e econômicas. Esta análise compara o consumo médio de água por habitante entre os estados brasileiros, oferecendo insights sobre padrões de uso e possíveis estratégias para o uso racional da água.</p>
+                        <a href="https://drive.google.com/file/d/15pa3wjU8aOpiDInN22Edgzyq6wZ1PR_C/view?usp=sharing" target="_blank" class="dataset-link">
+                            <i class="fas fa-database"></i> Acessar dataset completo
+                        </a>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="graficoConsumoAgua"></canvas>
+                    </div>
+                    <div class="insights-container">
+                        <h3><i class="fas fa-lightbulb"></i> Insights Principais</h3>
+                        <ul>
+                            <li>Os estados com <span class="insights-destaque">maior desenvolvimento econômico</span>, como Rio de Janeiro, São Paulo e Distrito Federal, apresentam consumo médio de água significativamente mais alto, ultrapassando 170 litros por habitante por dia, bem acima da média nacional.</li>
+                            <li>Fatores como <span class="insights-destaque">clima e cultura local</span> têm impacto direto no consumo de água. Estados com clima mais quente, como Rio de Janeiro, tendem a ter consumo per capita elevado, enquanto outros fatores culturais como consciência ambiental e hábitos de consumo também influenciam esses números.</li>
+                            <li>A <span class="insights-destaque">disparidade no consumo</span> entre estados mais desenvolvidos e menos desenvolvidos economicamente sugere que, à medida que o poder aquisitivo aumenta, o consumo de água tende a crescer, evidenciando a necessidade de políticas de conscientização que acompanhem o desenvolvimento socioeconômico.</li>
+                        </ul>
+                        <p class="insights-nota">Contexto adicional: A Organização Mundial da Saúde (OMS) recomenda um consumo mínimo de 110 litros de água por dia por pessoa para atender às necessidades básicas. O consumo excessivo em alguns estados indica oportunidades para campanhas de redução e uso consciente, enquanto o baixo consumo em outros pode sinalizar problemas de acesso ou intermitência no fornecimento.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção Perdas de Água -->
+            <section id="perdas-agua" class="analise-section">
+                <div class="container">
+                    <div class="analise-titulo">
+                        <i class="fas fa-faucet-drip"></i>
+                        <h2 id="perdas-heading">Índice de Perdas de Água na Distribuição por Estado (2022)</h2>
+                    </div>
+                    <div class="analise-introducao">
+                        <p>As perdas de água na distribuição representam um grande desafio para o setor de saneamento, afetando tanto a eficiência operacional quanto a sustentabilidade ambiental. Esta análise compara o índice de perdas de água entre os estados brasileiros, identificando aqueles com maior necessidade de investimentos em modernização e manutenção de redes.</p>
+                        <a href="https://drive.google.com/file/d/1USN8xQo2PdpwdDz4QqNwt8ebIIqHTD9F/view?usp=sharing" target="_blank" class="dataset-link">
+                            <i class="fas fa-database"></i> Acessar dataset completo
+                        </a>
+                    </div>
+                    <div class="canvas-container">
+                        <canvas id="graficoPerdas"></canvas>
+                    </div>
+                    <div class="insights-container">
+                        <h3><i class="fas fa-lightbulb"></i> Insights Principais</h3>
+                        <ul>
+                            <li>Estados da região Norte, como <span class="insights-destaque">Rondônia, Acre e Amazonas</span>, apresentam os maiores índices de perdas de água na distribuição, frequentemente superando 40%. Este cenário está associado a sistemas de abastecimento menos modernizados e com manutenção deficiente.</li>
+                            <li>A <span class="insights-destaque">correlação inversa</span> entre desenvolvimento econômico e índice de perdas é evidente: estados com maior PIB per capita, como São Paulo, Paraná e Santa Catarina, tendem a apresentar índices menores de perdas, refletindo maior capacidade de investimento em tecnologia e manutenção preventiva.</li>
+                            <li>A <span class="insights-destaque">dimensão econômica</span> das perdas é alarmante: considerando a média nacional de perdas de aproximadamente 35%, estima-se que cerca de R$ 10 bilhões sejam desperdiçados anualmente no Brasil, recursos que poderiam ser direcionados para a expansão dos serviços.</li>
+                        </ul>
+                        <p class="insights-nota">Perspectiva internacional: Enquanto países desenvolvidos como Japão e Alemanha mantêm índices de perdas abaixo de 10%, a média brasileira ainda é muito elevada. Reduzir essas perdas não apenas economiza recursos financeiros, mas também reduz a pressão sobre mananciais e diminui o consumo energético relacionado ao tratamento e distribuição de água.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Conclusão do Projeto -->
+            <section id="conclusao" class="analise-section">
+                <div class="container">
+                    <div class="analise-titulo">
+                        <i class="fas fa-flag-checkered"></i>
+                        <h2 id="conclusao-heading">Conclusão e Próximos Passos</h2>
+                    </div>
+                    <div class="analise-introducao">
+                        <p>As análises apresentadas fornecem um panorama da evolução do saneamento básico no Brasil, destacando avanços, desafios e oportunidades para melhoria. Os dados mostram que, apesar do progresso em algumas áreas, ainda há um longo caminho para a universalização do acesso à água tratada e ao esgotamento sanitário no país.</p>
+                        
+                        <p>A disparidade regional, a defasagem entre atendimento com água e esgoto, os níveis elevados de perdas na distribuição e a oscilação nos investimentos são desafios que precisam ser enfrentados com políticas públicas consistentes e investimentos bem direcionados.</p>
+                        
+                        <p>Para próximas análises, pretendo explorar outros aspectos do saneamento básico, como a relação entre cobertura de saneamento e indicadores de saúde pública, a eficiência dos prestadores de serviço e o impacto do novo marco legal do saneamento nos investimentos e na cobertura dos serviços.</p>
+                        
+                        <div class="conclusao-destaque">
+                            <p><strong>Principais Lições Desta Análise:</strong></p>
+                            <ol>
+                                <li>O Brasil avançou significativamente na cobertura de água e esgoto nos últimos anos, mas ainda está longe da universalização;</li>
+                                <li>A desigualdade regional é um desafio estrutural que demanda políticas específicas e investimentos direcionados;</li>
+                                <li>O combate às perdas de água representa uma oportunidade de ganho de eficiência para o setor;</li>
+                                <li>O novo Marco Legal do Saneamento pode acelerar os investimentos, mas seu sucesso dependerá da implementação eficaz e da regulação adequada.</li>
+                            </ol>
+                        </div>
+                        
+                        <p class="motivacional"><strong>Que a Força dos Dados esteja com você, Padawan!</strong> 🚀</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <footer aria-labelledby="footer-heading">
+        <div class="container">
+            <h2 id="footer-heading" class="sr-only">Informações de rodapé</h2>
+            <p class="yoda-quote">"Ver através dos dados, a verdade você deve." - Mestre Yoda</p>
+    
+            <div class="contato-info">
+                <div class="contato-item">
+                    <i class="icone-contato"></i>
+                    <p>© 2025 - Desenvolvido por Eric Pimentel</p>
+                </div>
+                <div class="contato-item">
+                     <div class="social-media">
+                        <a href="https://www.linkedin.com/in/eric-np-santos/" target="_blank"><img src="imagens/linkedin-logo.png" alt="LinkedIn"></a>
+                        <a href="https://github.com/enps2015" target="_blank"><img src="imagens/github-logo.png" alt="GitHub"></a>
+                        <a href="https://web.facebook.com/eric.n.pimentel" target="_blank"><img src="imagens/facebook-logo.png" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/eric.n.pimentel/" target="_blank"><img src="imagens/instagram-logo.jpeg" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="voltar-container">
+                <a href="index.html" class="botao-voltar">
+                    <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/star-wars-effects.js"></script>
+    <script src="js/sound-effects.js"></script>
+    <script src="js/script-analises-SNIS.js"></script>
+    <script>
+    // Script para controlar o botão "Voltar ao Topo"
+    document.addEventListener('DOMContentLoaded', function() {
+        const botaoTopo = document.getElementById('voltarTopo');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                botaoTopo.classList.add('visible');
+            } else {
+                botaoTopo.classList.remove('visible');
+            }
+        });
+        
+        botaoTopo.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
+    
+    <div id="accessibility-button" class="accessibility-button" aria-label="Acessibilidade" tabindex="0">
+        <i class="fas fa-universal-access" aria-hidden="true"></i>
+    </div>
+
+    <div id="accessibility-popup" class="accessibility-popup" role="dialog" aria-labelledby="accessibility-heading" aria-hidden="true">
+        <div class="accessibility-popup-content">
+            <h2 id="accessibility-heading">Declaração de Acessibilidade</h2>
+            <p>Este portfólio foi desenvolvido em conformidade com as diretrizes de acessibilidade web (WCAG) para garantir uma experiência inclusiva para todos os usuários. As seguintes funcionalidades de acessibilidade foram implementadas:</p>
+            <ul>
+                <li>O site pode ser totalmente navegado utilizando apenas o teclado, sem a necessidade de mouse.</li>
+                <li>Compatibilidade com Tecnologias Assistivas: O conteúdo é semanticamente estruturado e compatível com leitores de tela e outras tecnologias assistivas.</li>
+                <li>Contraste de Cores Otimizado: O design utiliza uma paleta de cores com alto contraste para garantir a legibilidade para usuários com baixa visão.</li>
+                <li>Textos Alternativos Abrangentes: Todas as imagens relevantes possuem textos alternativos descritivos para garantir a compreensão do conteúdo por leitores de tela.</li>
+                <li>HTML Semântico e Estruturado: A estrutura HTML segue os princípios de semântica e organização para facilitar a navegação e a interpretação do conteúdo por tecnologias assistivas.</li>
+            </ul>
+            <p>Estamos comprometidos com a acessibilidade contínua deste portfólio. Caso encontre barreiras de acessibilidade ou tenha sugestões de melhoria, por favor, entre em contato para que possamos aprimorar ainda mais a experiência de todos os usuários. Agradecemos seu feedback.</p>
+            <button id="close-accessibility-popup" class="close-popup" aria-label="Fechar" tabindex="0">&times;</button>
+        </div>
+    </div>
+</body>
+</html>

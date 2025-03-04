@@ -27,6 +27,7 @@ Este portfólio foi construído utilizando as seguintes tecnologias e "Poderes J
     *   **JavaScript:** Interatividade do menu hambúrguer e funcionalidades futuras.
     *   **Font Awesome:** Biblioteca de ícones para enriquecer a interface visual.
     *   **Responsividade (Mobile-First):**  Site totalmente adaptado para diferentes dispositivos (desktop, tablet, mobile) com **Media Queries e Menu Hambúrguer**.
+    *   **Chart.js:** Criação de gráficos interativos e visualizações de dados dinâmicas.
 
 *   **Design e UX/UI:**
     *   **Design Temático:**  Identidade visual inspirada no universo de Star Wars, com paleta de cores escura e elementos visuais característicos.
@@ -124,6 +125,7 @@ Nesta nova versão do meu portfólio, foram implementadas diversas melhorias e r
   - Criação de dashboards no Looker Studio
   - Melhoria contínua da experiência do usuário
 * **Botão de Acessibilidade**: Implementação de um novo botão de acessibilidade informando aos usuários que o site está adequado aos padrões de acessibilidade, garantindo assim uma melhor inclusão digital.
+* **Criação da Página de Análises e Demonstrações**: Implementação da nova página de análises com o primeiro projeto sobre saneamento básico no Brasil, utilizando dados do SNIS e gráficos interativos com Chart.js. Mais projetos serão adicionados futuramente.
 
 ### Desafios Enfrentados
 
@@ -189,4 +191,4 @@ Este portfólio representa um passo importante na minha jornada em Data Science.
 
 ---
 
-*✨ Última atualização: Fevereiro de 2025 ✨*
+*✨ Última atualização: Março de 2025 ✨*
